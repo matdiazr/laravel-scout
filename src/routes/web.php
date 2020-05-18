@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
+
+Route::get('noticias', function (){
+    return view('posts');
+})->name('noticias');
 
 //retornando una ruta con un string + una variable opcional y definimos un valor por defecto
 Route::get('test/{string?}', function ($string = "sin texto"){
@@ -24,4 +28,4 @@ Route::get('test/{string?}', function ($string = "sin texto"){
 })->where('string','[0-9]+');
 
 //atajo para retornar views
-Route::view('/posts', 'posts');
+// Route::view('/posts', 'posts');

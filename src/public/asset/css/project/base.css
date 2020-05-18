@@ -1,0 +1,11 @@
+header {
+  background-color: bisque;
+  padding-bottom: 30px;
+}
+body {
+  background-color: aquamarine;
+}
+footer {
+  height: 50px;
+  background-color: grey;
+}

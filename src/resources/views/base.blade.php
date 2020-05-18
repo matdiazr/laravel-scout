@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Base</title>
-  <link rel="stylesheet" href="dist/css/bootstrap.min.css">
-  <script src="dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href={{ asset("asset/css/bootstrap.min.css")}} >
+  <link rel="stylesheet" href={{ asset("asset/css/project/base.css")}} >
+  <script src= {{ asset("asset/js/bootstrap.min.js")}} ></script>
 </head>
 
 <body>
@@ -28,15 +29,15 @@
               <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="{{ route('staff') }}">Staff</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
+            <a class="nav-link dropdown-toggle" href="{{ route('ramas') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Ramas
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="{{ route('ramas', 'lobatos') }}">Lobatos</a>
+                <a class="dropdown-item" href="{{ route('ramas', 'golondrinas') }}">Golondrina</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Something else here</a>
               </div>
@@ -57,13 +58,13 @@
     @yield('content')
   </div>
   <footer>
-    <div class="container">
-      <h2>Developer: Matias</h2>
+    <div class="container-fluid">
+      <p>Develop by Matias</p>
     </div>
   </footer>
 </body>
 
-<script src="dist/js/jquery-3.5.1.slim.min.js"></script>
-<script src="dist/js/bootstrap.bundle.min.js"></script>
-<script src="dist/js/popper.min.js"></script>
+<script src={{ asset("asset/js/jquery-3.5.1.slim.min.js")}}></script>
+<script src={{ asset("asset/js/bootstrap.bundle.min.js")}}></script>
+<script src={{ asset("asset/js/popper.min.js")}}></script>
 </html>

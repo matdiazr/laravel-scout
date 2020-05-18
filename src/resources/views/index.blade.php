@@ -10,13 +10,13 @@
 
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="dist/imagen/imagen1.jpeg" class="d-block w-100 img-fluid" alt="...">
+      <img src={{ asset("asset/imagen/imagen1.jpeg")}} class="d-block w-100 img-fluid" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="dist/imagen/imagen2.jpeg" class="d-block w-100 img-fluid" alt="...">
+      <img src={{ asset("asset/imagen/imagen2.jpeg")}} class="d-block w-100 img-fluid" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="dist/imagen/imagen3.jpeg" class="d-block w-100 img-fluid" alt="...">
+      <img src={{ asset("asset/imagen/imagen3.jpeg")}} class="d-block w-100 img-fluid" alt="...">
     </div>
   </div>
   

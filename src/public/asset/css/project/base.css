@@ -5,6 +5,9 @@ header {
 body {
   background-color: aquamarine;
 }
+.content-yield {
+  padding: 25px 0 25px;
+}
 footer {
   height: 50px;
   background-color: grey;

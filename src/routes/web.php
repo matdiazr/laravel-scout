@@ -17,17 +17,9 @@ Route::get('/', 'PagesController@home')->name('home');
 
 Route::get('noticias', 'PagesController@noticias')->name('noticias');
 
-Route::get('staff', function() {
-    $staff_list = ['Matias', 'Luis', 'Jose'];
-    //array asociativo
-    // return view('staff', ['staff' => $staff_list]);
-    //version con compact que asocia con blade
-    return view('staff', compact('staff_list'));
-})->name('staff');
+Route::get('staff', 'PagesController@staff')->name('staff');
 
-Route::get('ramas/{name?}', function($name = null){
-    return view('ramas', compact('name'));
-})->name('ramas');
+Route::get('ramas/{name?}', 'PagesController@ramas')->name('ramas');
 
 //retornando una ruta con un string + una variable opcional y definimos un valor por defecto
 Route::get('test/{string?}', function ($string = "sin texto"){

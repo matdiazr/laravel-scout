@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
-  <div class="col-lg-4 col-sm-6 col-12">
+  <div class="col-lg-4 col-sm-6 col-12 mb-3">
     <div class="card" style="width: 18rem;">
       <img src={{ asset("asset/imagen/imagen4.jpeg")}} class="card-img-top" alt="...">
       <div class="card-body">
@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  <div class="col-lg-4 col-sm-6 col-12">
+  <div class="col-lg-4 col-sm-6 col-12 mb-3">
     <div class="card" style="width: 18rem;">
       <img src={{ asset("asset/imagen/imagen5.jpeg")}} class="card-img-top" alt="...">
       <div class="card-body">
@@ -24,7 +24,7 @@
     </div>
   </div>
 
-  <div class="col-lg-4 col-sm-6 col-12">
+  <div class="col-lg-4 col-sm-6 col-12 mb-3">
     <div class="card" style="width: 18rem;">
       <img src={{ asset("asset/imagen/imagen1.jpeg")}} class="card-img-top" alt="...">
       <div class="card-body">
@@ -35,7 +35,7 @@
     </div>
   </div>
 
-  <div class="col-lg-4 col-sm-6 col-12">
+  <div class="col-lg-4 col-sm-6 col-12 mb-3">
     <div class="card" style="width: 18rem;">
       <img src={{ asset("asset/imagen/imagen2.jpeg")}} class="card-img-top" alt="...">
       <div class="card-body">
@@ -46,7 +46,7 @@
     </div>
   </div>
 
-  <div class="col-lg-4 col-sm-6 col-12">
+  <div class="col-lg-4 col-sm-6 col-12 mb-3">
     <div class="card" style="width: 18rem;">
       <img src={{ asset("asset/imagen/imagen3.jpeg")}} class="card-img-top" alt="...">
       <div class="card-body">
@@ -57,7 +57,7 @@
     </div>
   </div>
 
-  <div class="col-lg-4 col-sm-6 col-12">
+  <div class="col-lg-4 col-sm-6 col-12 mb-3">
     <div class="card" style="width: 18rem;">
       <img src={{ asset("asset/imagen/imagen4.jpeg")}} class="card-img-top" alt="...">
       <div class="card-body">

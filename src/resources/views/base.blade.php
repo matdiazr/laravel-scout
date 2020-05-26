@@ -30,6 +30,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ route('staff') }}">Staff</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('staff') }}">Nosotros</a>
+            </li>
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="{{ route('ramas') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Ramas

@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="row">
+
+  @foreach ($all_posts as $post)
   <div class="col-lg-4 col-sm-6 col-12 mb-3">
     <div class="card" style="width: 18rem;">
       <img src={{ asset("asset/imagen/imagen4.jpeg")}} class="card-img-top" alt="...">
@@ -12,6 +14,7 @@
       </div>
     </div>
   </div>
+  @endforeach
 
   <div class="col-lg-4 col-sm-6 col-12 mb-3">
     <div class="card" style="width: 18rem;">

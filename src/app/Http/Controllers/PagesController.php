@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App;
 
 class PagesController extends Controller
 {
@@ -11,7 +12,8 @@ class PagesController extends Controller
     }
 
     public function noticias(){
-        return view('posts');
+        $all_posts = App\Post::all();
+        return view('posts', compact('all_posts'));
     }
 
     public function staff(){

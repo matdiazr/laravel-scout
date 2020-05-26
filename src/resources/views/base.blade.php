@@ -13,8 +13,7 @@
 <body>
   <header>
     <div class="container">
-      <h1>Grupo Scout</h1>
-      <h2>Pietro bonilli</h2>
+      <h2>Grupo Scout</h2>
     </div>
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">

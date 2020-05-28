@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('content')
-  <h1>Este ese el equipo de trabajo</h1>
+  <h1>Equipo de trabajo</h1>
 
   <div class="accordion" id="accordionExample">
     
@@ -10,7 +10,8 @@
       <div class="card-header" id="headingOne">
         <h2 class="mb-0">
         <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse{{ $loop->index }}" aria-expanded="true" aria-controls="collapseOne">
-           {{ $staff }}
+          <h5>{{ $staff }}</h5>
+          
           </button>
         </h2>
       </div>
@@ -22,8 +23,11 @@
                 <img src={{ asset("asset/imagen/imagen4.jpeg")}} class="card-img-top" alt="...">
               </div>
               <div class="col-8">
+                <h6>rama: Pionero</h6>
+                <h6>curso: básico</h6>
+                <h6>edad: 24</h6>
                 <p>
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                     put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                 </p>
               </div>
           </div>

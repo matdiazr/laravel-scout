@@ -12,8 +12,8 @@
 
 <body>
   <header>
-    <div class="container">
-      <h2>Grupo Scout</h2>
+    <div class="container pt-4">
+      <h2 class="mb-3">Grupo Scout</h2>
     </div>
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -65,7 +65,7 @@
   </div>
   <footer>
     <div class="container-fluid">
-      <h4>Develop in 2020</h4>
+      <h3 class="pt-2">Develop in 2020</h3>
     </div>
   </footer>
 </body>

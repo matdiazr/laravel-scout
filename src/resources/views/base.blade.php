@@ -34,18 +34,22 @@
               <a class="nav-link" href="{{ route('staff') }}">Nosotros</a>
             </li>
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="{{ route('ramas') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Ramas
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{{ route('ramas', 'lobatos') }}">Lobatos</a>
                 <a class="dropdown-item" href="{{ route('ramas', 'golondrinas') }}">Golondrina</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#}" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Admin
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                <a class="dropdown-item" href="{{ route('noticias.form') }}">Posts</a>
+                <a class="dropdown-item" href="{{ route('noticias.form') }}">Staff</a>
+              </div>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
@@ -61,7 +65,7 @@
   </div>
   <footer>
     <div class="container-fluid">
-      <h4>Develop by Matias</h4>
+      <h4>Develop in 2020</h4>
     </div>
   </footer>
 </body>

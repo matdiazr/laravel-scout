@@ -3,8 +3,8 @@
 @section('content')
 <div>
   @if (session('respuesta'))
-    <div class="aler alert-success">
-      <h2>{{ session('respuesta') }}</h2>
+    <div class="aler alert-primary m-2">
+      <p class="pl-2">{{ session('respuesta') }}</p>
     </div>  
   @endif
 

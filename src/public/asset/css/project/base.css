@@ -6,6 +6,7 @@ body {
   background-color: #E5E1E0;
 }
 h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
   color: #D9BA06;
 }
 .content-yield {
@@ -14,6 +15,10 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary {
   background-color: #2F2C32;
   border-color: #2F2C32 ;
+}
+.alert-primary {
+  background-color: #2F2C32;
+  color: white;
 }
 footer {
   height: 50px;

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PagesController@home')->name('home');
 
 Route::get('noticias', 'PagesController@noticias')->name('noticias');
-Route::get('noticias/{id}', 'PagesController@detalle')->name('noticias.detalle');
+Route::get('noticias/{id}', 'PagesController@detallePost')->name('noticias.detalle');
 Route::get('admin/noticias', 'PagesController@formPost')->name('noticias.form');
 Route::post('admin/noticias', 'PagesController@crearPost')->name('noticias.create');
 

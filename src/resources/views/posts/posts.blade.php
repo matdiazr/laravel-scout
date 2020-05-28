@@ -9,7 +9,7 @@
       <img src={{ asset("asset/imagen/imagen5.jpeg")}} class="card-img-top" alt="...">
       <div class="card-body">
       <h5 class="card-title">{{ $post->titulo }}</h5>
-      <p class="card-text">{{ $post->descripcion }}</p>
+      <p class="card-text">{{ $post->bajada }}</p>
         <a href="{{ route('noticias.detalle', $post) }}" class="btn btn-primary">Ver Más</a>
       </div>
     </div>

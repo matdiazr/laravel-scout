@@ -16,7 +16,7 @@ class PagesController extends Controller
         return view('posts.posts', compact('all_posts'));
     }
     
-    public function detalle($id){
+    public function detallePost($id){
         $post = App\Post::findOrFail($id);
         return view('posts.detalle', compact('post'));
     }
@@ -30,6 +30,12 @@ class PagesController extends Controller
         //retorna todo el contenido del formulario
         // return $request->all();
 
+        $request->validate([
+            'titulo' => 'required',
+            'bajada' => 'required',
+            'descripcion' => 'required'
+        ]);
+
         $postNuevo = new App\Post;
         $postNuevo->estado = true;
         $postNuevo->titulo = $request->titulo;
@@ -39,7 +45,7 @@ class PagesController extends Controller
         $postNuevo->save();
 
         //nos devuelve a la misma pagina
-        return back();
+        return back()->with('respuesta', 'Post Agregado');
     }
 
     public function staff(){

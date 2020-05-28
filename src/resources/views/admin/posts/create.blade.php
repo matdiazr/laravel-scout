@@ -2,6 +2,12 @@
 
 @section('content')
 <div>
+  @if (session('respuesta'))
+    <div class="aler alert-success">
+      <h2>{{ session('respuesta') }}</h2>
+    </div>  
+  @endif
+
   <form action="" method="POST">
     @csrf
     <input type="text" name="titulo" placeholder="titulo" class="form-control m-2" id="">
@@ -10,6 +16,7 @@
     <button class="btn btn-primary btn-block m-2" type="submit">Agregar</button>
   </form>
 </div>
+
 <div class="mb-3">
   <table class="table">
     <thead>

@@ -39,7 +39,7 @@ class PagesController extends Controller
         $postNuevo->save();
 
         //nos devuelve a la misma pagina
-        return back;
+        return back();
     }
 
     public function staff(){

@@ -1,14 +1,21 @@
 header {
-  background-color: gold;
+  background-color: #2F2C32;
   padding-bottom: 30px;
 }
 body {
-  background-color: white;
+  background-color: #E5E1E0;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #D9BA06;
 }
 .content-yield {
   padding: 25px 0 25px;
 }
+.btn-primary {
+  background-color: #2F2C32;
+  border-color: #2F2C32 ;
+}
 footer {
   height: 50px;
-  background-color: grey;
+  background-color: #2F2C32;
 }

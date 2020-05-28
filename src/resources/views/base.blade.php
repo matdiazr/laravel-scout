@@ -61,7 +61,7 @@
   </div>
   <footer>
     <div class="container-fluid">
-      <p>Develop by Matias</p>
+      <h4>Develop by Matias</h4>
     </div>
   </footer>
 </body>

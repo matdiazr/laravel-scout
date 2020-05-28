@@ -22,7 +22,8 @@ class PagesController extends Controller
     }
 
     public function formPost(){
-        return view('admin.posts.create');
+        $all_posts = App\Post::all();
+        return view('admin.posts.create', compact('all_posts'));
     }
 
     public function crearPost(Request $request){
@@ -32,15 +33,13 @@ class PagesController extends Controller
         $postNuevo = new App\Post;
         $postNuevo->estado = true;
         $postNuevo->titulo = $request->titulo;
+        $postNuevo->bajada = $request->bajada;
         $postNuevo->descripcion = $request->descripcion;
 
         $postNuevo->save();
 
         //nos devuelve a la misma pagina
-        //return back;
-
-        $all_posts = App\Post::all();
-        return view('posts.posts', compact('all_posts'));
+        return back;
     }
 
     public function staff(){

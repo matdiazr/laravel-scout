@@ -25,6 +25,7 @@
       </ul>
   </nav>
     @if (!empty($name))
+      <h2>Sección sin diseño</h2>
       <h1>Rama:{{ $name }}</h1>
     @endif
 @endsection

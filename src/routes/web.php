@@ -24,6 +24,11 @@ Route::get('staff', 'PagesController@staff')->name('staff');
 
 Route::get('ramas/{name?}', 'PagesController@ramas')->name('ramas');
 
+Route::get('admin/staff', 'PagesController@formStaff')->name('staff.form');
+Route::post('admin/staff', 'PagesController@crearStaff')->name('staff.create');
+
+Route::view('nosotros', 'aboutus')->name('nosotros');
+
 //retornando una ruta con un string + una variable opcional y definimos un valor por defecto
 Route::get('test/{string?}', function ($string = "sin texto"){
     return 'texto de prueba: ' . $string ;

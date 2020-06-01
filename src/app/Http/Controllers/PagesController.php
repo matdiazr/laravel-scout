@@ -8,14 +8,16 @@ use App;
 class PagesController extends Controller
 {
     public function home(){
-        return view('index');
+        $last_posts = App\Post::latest()->take(3)->get();
+        return view('index', compact('last_posts'));
     }
 
     public function noticias(){
-        $all_posts = App\Post::all();
+        $all_posts = App\Post::latest()->get();
         return view('posts.posts', compact('all_posts'));
     }
     
+    //Post
     public function detallePost($id){
         $post = App\Post::findOrFail($id);
         return view('posts.detalle', compact('post'));
@@ -48,12 +50,44 @@ class PagesController extends Controller
         return back()->with('respuesta', 'Post Agregado');
     }
 
-    public function staff(){
-        $staff_list = ['Matias', 'Luis', 'Jose'];
-        return view('staff', compact('staff_list'));
-    }
     
     public function ramas($name = null){
         return view('ramas', compact('name'));
     }
+    
+    //staff
+    public function staff(){
+        $all_staff = App\Staff::all();
+        return view('staff', compact('all_staff'));
+    }
+    
+    public function formStaff(){
+        $all_staff = App\Staff::all();
+        return view('admin.staff.create', compact('all_staff'));
+    }
+
+    public function crearStaff(Request $request){
+        //retorna todo el contenido del formulario
+        // return $request->all();
+
+        $request->validate([
+            'nombre' => 'required',
+            'edad' => 'required',
+            'curso' => 'required'
+        ]);
+
+        $staffNuevo = new App\Staff;
+        // agregar estado al modelo del 
+        // $staffNuevo->estado = true;
+        $staffNuevo->nombre = $request->nombre;
+        $staffNuevo->edad = $request->edad;
+        $staffNuevo->curso = $request->curso;
+        $staffNuevo->descripcion = $request->descripcion;
+
+        $staffNuevo->save();
+
+        //nos devuelve a la misma pagina
+        return back()->with('respuesta', 'Staff Agregado');
+    }
+
 }

@@ -31,7 +31,7 @@
               <a class="nav-link" href="{{ route('staff') }}">Staff</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('staff') }}">Nosotros</a>
+              <a class="nav-link" href="{{ route('nosotros') }}">Nosotros</a>
             </li>
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -48,7 +48,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                 <a class="dropdown-item" href="{{ route('noticias.form') }}">Posts</a>
-                <a class="dropdown-item" href="{{ route('noticias.form') }}">Staff</a>
+                <a class="dropdown-item" href="{{ route('staff.form') }}">Staff</a>
               </div>
             </li>
           </ul>

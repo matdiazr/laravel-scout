@@ -5,12 +5,12 @@
 
   <div class="accordion" id="accordionExample">
     
-    @foreach ($staff_list as $staff)
+    @foreach ($all_staff as $staff)
     <div class="card">
       <div class="card-header" id="headingOne">
         <h2 class="mb-0">
         <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse{{ $loop->index }}" aria-expanded="true" aria-controls="collapseOne">
-          <h5>{{ $staff }}</h5>
+          <h5>{{ $staff->nombre }}</h5>
           
           </button>
         </h2>
@@ -24,11 +24,9 @@
               </div>
               <div class="col-8">
                 <h6>rama: Pionero</h6>
-                <h6>curso: básico</h6>
-                <h6>edad: 24</h6>
-                <p>
-                     put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </p>
+                <h6>curso: {{ $staff->curso }}</h6>
+                <h6>edad: {{ $staff->edad }}</h6>
+              <p>{{ $staff->descripcion }}</p>
               </div>
           </div>
         </div>

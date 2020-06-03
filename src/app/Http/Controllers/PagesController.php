@@ -82,12 +82,18 @@ class PagesController extends Controller
         $staffNuevo->nombre = $request->nombre;
         $staffNuevo->edad = $request->edad;
         $staffNuevo->curso = $request->curso;
+        $staffNuevo->rama = $request->rama;
         $staffNuevo->descripcion = $request->descripcion;
 
         $staffNuevo->save();
 
         //nos devuelve a la misma pagina
         return back()->with('respuesta', 'Staff Agregado');
+    }
+
+    public function editarStaff($id){
+        $staff = App\Staff::findOrFail($id);
+        return view('admin.staff.edit', compact('staff'));
     }
 
 }

@@ -23,6 +23,7 @@
     <input type="text" name="nombre" placeholder="nombre" class="form-control m-2" value="{{ old('nombre') }}">
     <input type="text" name="edad" placeholder="edad" class="form-control m-2" value="{{ old('edad') }}">
     <input type="text" name="curso" placeholder="curso" class="form-control m-2" value="{{ old('curso') }}">
+    <input type="text" name="rama" placeholder="rama" class="form-control m-2" value="{{ old('rama') }}">
     <input type="text" name="descripcion" placeholder="descripcion" class="form-control m-2" value="{{ old('descripcion') }}">
     <button class="btn btn-primary btn-block m-2" type="submit">Agregar</button>
   </form>
@@ -34,7 +35,7 @@
       <tr>
         <th scope="col">ID</th>
         <th scope="col">NOMBRE</th>
-        <th scope="col">EDITAR</th>
+        <th scope="col">MODIFICAR</th>
         <th scope="col">BORRAR</th>
       </tr>
     </thead>
@@ -43,7 +44,7 @@
       <tr>
         <th scope="row">{{ $staff->id }}</th>
         <td>{{ $staff->nombre }}</td>
-        <td>actualizar</td>
+        <td><a href="{{ route('staff.edit', $staff) }}" class="btn btn-warning btn-sm">Editar</a></td>
         <td>borrar</td>
       </tr>
       @endforeach

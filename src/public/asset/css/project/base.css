@@ -20,6 +20,11 @@ h4, h5, h6 {
   background-color: #2F2C32;
   border-color: #2F2C32 ;
 }
+.btn-primary:hover {
+  color: #2F2C32;
+  background-color: #D9BA06;
+  border: 1px solid #D9BA06;
+}
 .alert-primary {
   background-color: #2F2C32;
   color: white;
@@ -30,4 +35,8 @@ h4, h5, h6 {
 footer {
   height: 50px;
   background-color: #2F2C32;
+}
+/* home blade */
+#carouselHome {
+  width: 800px;
 }

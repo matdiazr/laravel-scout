@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->timestamps();
             $table->boolean('estado');
             $table->string('titulo');
+            $table->string('bajada');
             $table->text('descripcion');
             
         });

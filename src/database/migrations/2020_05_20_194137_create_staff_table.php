@@ -18,6 +18,7 @@ class CreateStaffTable extends Migration
             $table->string('nombre');
             $table->integer('edad');
             $table->string('curso');
+            $table->string('rama');
             $table->text('descripcion');
             $table->timestamps();
         });

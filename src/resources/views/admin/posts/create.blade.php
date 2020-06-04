@@ -3,7 +3,7 @@
 @section('content')
 <div>
   @if (session('respuesta'))
-    <div class="aler alert-primary m-2">
+    <div class="alert alert-success m-2">
       <p class="pl-2">{{ session('respuesta') }}</p>
     </div>  
   @endif

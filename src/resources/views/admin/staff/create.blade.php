@@ -3,7 +3,7 @@
 @section('content')
 <div>
   @if (session('respuesta'))
-    <div class="aler alert-primary m-2">
+    <div class="alert alert-success m-2">
       <p class="pl-2">{{ session('respuesta') }}</p>
     </div>  
   @endif
@@ -22,8 +22,22 @@
 
     <input type="text" name="nombre" placeholder="nombre" class="form-control m-2" value="{{ old('nombre') }}">
     <input type="text" name="edad" placeholder="edad" class="form-control m-2" value="{{ old('edad') }}">
-    <input type="text" name="curso" placeholder="curso" class="form-control m-2" value="{{ old('curso') }}">
-    <input type="text" name="rama" placeholder="rama" class="form-control m-2" value="{{ old('rama') }}">
+    <select name="curso" class="custom-select custom-select-lg m-2" id="">
+      <option value="ninguno">Ninguno</option>
+      <option value="basico">Básico</option>
+      <option value="medio">Medio</option>
+      <option value="avanzado">Avanzado</option>
+      <option value="formador">Formador</option>
+    </select>
+    <select name="rama" class="custom-select custom-select-lg m-2"  id="">
+      <option value="indefinido">Indefinido</option>
+      <option value="lobatos">Lobatos</option>
+      <option value="golondrinas">Golondrinas</option>
+      <option value="tropa">Tropa</option>
+      <option value="compañia">Compañia</option>
+      <option value="pioneros">Pioneros</option>
+      <option value="caminantes">Caminantes</option>
+    </select>
     <input type="text" name="descripcion" placeholder="descripcion" class="form-control m-2" value="{{ old('descripcion') }}">
     <button class="btn btn-primary btn-block m-2" type="submit">Agregar</button>
   </form>

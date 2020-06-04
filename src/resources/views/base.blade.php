@@ -60,9 +60,9 @@
     </div>  
   </header>
 
-  <div class="container content-yield">
+  {{-- <div class="container content-yield"> --}}
     @yield('content')
-  </div>
+  {{-- </div> --}}
   <footer>
     <div class="container-fluid">
       <h3 class="pt-2">Develop in 2020</h3>

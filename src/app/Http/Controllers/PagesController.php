@@ -96,4 +96,17 @@ class PagesController extends Controller
         return view('admin.staff.edit', compact('staff'));
     }
 
+    public function actualizarStaff(Request $request, $id){
+        $staffUpdate = App\Staff::findOrFail($id);
+        $staffUpdate->nombre = $request->nombre;
+        $staffUpdate->edad = $request->edad;
+        $staffUpdate->curso = $request->curso;
+        $staffUpdate->rama = $request->rama;
+        $staffUpdate->descripcion = $request->descripcion;
+
+        $staffUpdate->save();
+        
+        return back()->with('respuesta', 'Staff Modificado' );
+    }
+
 }

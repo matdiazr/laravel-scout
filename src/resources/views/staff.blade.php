@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="container my-3">
-    <h1>Equipo de trabajo</h1>
+    <h1 class="my-5">Equipo de trabajo</h1>
 
     <div class="accordion" id="accordionExample">
       

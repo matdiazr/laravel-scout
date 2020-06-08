@@ -46,5 +46,8 @@
       @endforeach
     </tbody>
   </table>
+  <div class="row justify-content-center">
+    {{ $all_posts->links() }}
+  </div>
 </div>
 @endsection

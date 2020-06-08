@@ -18,7 +18,10 @@
       </div>
     </div>
     @endforeach
-
+  </div>
+  <div class="w-100 border my-5"></div>
+  <div class="row justify-content-center mb-3">
+    {{ $all_posts->links() }}
   </div>
 </div>
 @endsection

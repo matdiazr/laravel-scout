@@ -13,7 +13,7 @@ class PagesController extends Controller
     }
 
     public function noticias(){
-        $all_posts = App\Post::latest()->get();
+        $all_posts = App\Post::latest()->paginate(6);
         return view('posts.posts', compact('all_posts'));
     }
     
@@ -24,7 +24,7 @@ class PagesController extends Controller
     }
 
     public function formPost(){
-        $all_posts = App\Post::all();
+        $all_posts = App\Post::latest()->paginate(5);
         return view('admin.posts.create', compact('all_posts'));
     }
 
@@ -62,7 +62,7 @@ class PagesController extends Controller
     }
     
     public function formStaff(){
-        $all_staff = App\Staff::all();
+        $all_staff = App\Staff::latest()->paginate(5);
         return view('admin.staff.create', compact('all_staff'));
     }
 

@@ -72,5 +72,8 @@
       @endforeach
     </tbody>
   </table>
+  <div class="row justify-content-center">
+    {{ $all_staff->links()}}
+  </div>
 </div>
 @endsection

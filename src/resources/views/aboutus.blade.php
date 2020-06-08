@@ -1,5 +1,8 @@
 @extends('base')
 
 @section('content')
-<h1>Sección completa sin diseño</h1>
+<div class="container">
+  <h1>Sección completa sin diseño</h1>
+
+</div>
 @endsection

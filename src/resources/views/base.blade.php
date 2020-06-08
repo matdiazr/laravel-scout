@@ -12,10 +12,10 @@
 
 <body>
   <header>
-    <div class="container pt-4">
+    <div class="container">
       <h2 class="mb-3">Grupo Scout</h2>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="{{ route('noticias') }}">Noticias</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

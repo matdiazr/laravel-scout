@@ -33,7 +33,7 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - ./src:/var/www/html
+      - my-datavolume:/var/lib/mysql
     networks:
       - laravel
 
@@ -81,3 +81,6 @@ services:
     entrypoint: ['/var/www/html/artisan']
     networks: 
       - laravel
+      
+volumes:
+  my-datavolume:

@@ -1,6 +1,5 @@
 header {
   background-color: #2F2C32;
-  padding-bottom: 30px;
 }
 body {
   background-color: #E5E1E0;
@@ -20,7 +19,7 @@ h4, h5, h6 {
   background-color: #2F2C32;
   border-color: #2F2C32 ;
 }
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
   color: #2F2C32;
   background-color: #D9BA06;
   border: 1px solid #D9BA06;

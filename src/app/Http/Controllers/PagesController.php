@@ -109,4 +109,10 @@ class PagesController extends Controller
         return back()->with('respuesta', 'Staff Modificado' );
     }
 
+    public function eliminarStaff($id){
+        $staffEliminar = App\Staff::findOrFail($id);
+        $staffEliminar->delete();
+
+        return back()->with('respuesta', 'Staff Eliminado');
+    }
 }

@@ -28,6 +28,7 @@ Route::get('admin/staff', 'PagesController@formStaff')->name('staff.form');
 Route::post('admin/staff', 'PagesController@crearStaff')->name('staff.create');
 Route::get('admin/staff/editar/{id}', 'PagesController@editarStaff')->name('staff.edit');
 Route::put('admin/staff/editar/{id}', 'PagesController@actualizarStaff')->name('staff.update');
+Route::delete('eliminar/{id}','PagesController@eliminarStaff')->name('staff.delete');
 
 Route::view('nosotros', 'aboutus')->name('nosotros');
 

@@ -1,8 +1,8 @@
 @extends('base')
 
 @section('content')
-<div class="container mt-5">
-  <div class="row m-3 justify-content-center">
+<div class="container">
+  <div class="mt-4 row justify-content-center">
     <div id="carouselHome" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselHome" data-slide-to="0" class="active"></li>
@@ -34,27 +34,31 @@
   </div>
 </div>
 
-<div class="container-fluid titulo-imagen-destacada">
-  <div class="row my-5 justify-content-center">
-      <h2 class="">noticias destacadas</h2>
+@if (count($last_posts) >= 1)
+  <div class="container-fluid titulo-imagen-destacada">
+    <div class="row my-5 justify-content-center">
+        <h2 class="">noticias destacadas</h2>
+    </div>
   </div>
-</div>
 
-<div class="container">
-  <div class="row m-3">
-  @foreach ($last_posts as $post)
-    <div class="col-lg-4 col-sm-6 col-12 my-2">
-      <div class="card" style="width: 18rem;">
-        <img src={{ asset("asset/imagen/imagen$loop->index.jpeg")}} class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{ $post->titulo }}</h5>
-        <p class="card-text">{{ $post->bajada }}</p>
-        <a href="{{ route('noticias.detalle', $post) }}" class="btn btn-primary">ver más</a>
+  <div class="container">
+    <div class="row m-3">
+    @foreach ($last_posts as $post)
+      <div class="col-lg-4 col-sm-6 col-12 my-2">
+        <div class="card" style="width: 18rem;">
+          <a href="{{ route('noticias.detalle', $post) }}">
+            <img src={{ asset("asset/imagen/imagen$loop->index.jpeg")}} class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ $post->titulo }}</h5>
+          {{-- <p class="card-text">{{ $post->bajada }}</p> --}}
+          {{-- <a href="{{ route('noticias.detalle', $post) }}" class="btn btn-primary">ver más</a> --}}
+            </div>
+          </a>
         </div>
       </div>
+    @endforeach
     </div>
-  @endforeach
   </div>
-</div>
+@endif
 
 @endsection

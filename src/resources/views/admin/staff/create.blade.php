@@ -1,7 +1,9 @@
 @extends('base')
 
 @section('content')
-<div>
+<div class="container">
+  <h2 class="m-4">Formulario: Staff</h2>
+
   @if (session('respuesta'))
     <div class="alert alert-success m-2">
       <p class="pl-2">{{ session('respuesta') }}</p>
@@ -22,14 +24,14 @@
 
     <input type="text" name="nombre" placeholder="nombre" class="form-control m-2" value="{{ old('nombre') }}">
     <input type="text" name="edad" placeholder="edad" class="form-control m-2" value="{{ old('edad') }}">
-    <select name="curso" class="custom-select custom-select-lg m-2" id="">
+    <select name="curso" class="custom-select custom-select-md m-2" id="">
       <option value="ninguno">Ninguno</option>
       <option value="basico">Básico</option>
       <option value="medio">Medio</option>
       <option value="avanzado">Avanzado</option>
       <option value="formador">Formador</option>
     </select>
-    <select name="rama" class="custom-select custom-select-lg m-2"  id="">
+    <select name="rama" class="custom-select custom-select-md m-2"  id="">
       <option value="indefinido">Indefinido</option>
       <option value="lobatos">Lobatos</option>
       <option value="golondrinas">Golondrinas</option>
@@ -43,7 +45,7 @@
   </form>
 </div>
 
-<div class="mb-3">
+<div class="container mb-3">
   <table class="table">
     <thead>
       <tr>
@@ -59,7 +61,13 @@
         <th scope="row">{{ $staff->id }}</th>
         <td>{{ $staff->nombre }}</td>
         <td><a href="{{ route('staff.edit', $staff) }}" class="btn btn-warning btn-sm">Editar</a></td>
-        <td>borrar</td>
+        <td>
+        <form action="{{ route('staff.delete', $staff) }}" method="POST">
+          @method('DELETE')
+          @csrf
+          <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+        </form>
+        </td>
       </tr>
       @endforeach
     </tbody>

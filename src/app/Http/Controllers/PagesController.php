@@ -7,9 +7,9 @@ use App;
 
 class PagesController extends Controller
 {
-    public function home(){
+    public function portada(){
         $last_posts = App\Post::latest()->take(3)->get();
-        return view('index', compact('last_posts'));
+        return view('portada', compact('last_posts'));
     }
 
     public function noticias(){

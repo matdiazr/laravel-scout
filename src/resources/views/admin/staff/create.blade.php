@@ -25,14 +25,14 @@
     <input type="text" name="nombre" placeholder="nombre" class="form-control m-2" value="{{ old('nombre') }}">
     <input type="text" name="edad" placeholder="edad" class="form-control m-2" value="{{ old('edad') }}">
     <select name="curso" class="custom-select custom-select-md m-2" id="">
-      <option value="ninguno">Ninguno</option>
+      <option value="ninguno">ninguno</option>
       <option value="basico">Básico</option>
       <option value="medio">Medio</option>
       <option value="avanzado">Avanzado</option>
       <option value="formador">Formador</option>
     </select>
     <select name="rama" class="custom-select custom-select-md m-2"  id="">
-      <option value="indefinido">Indefinido</option>
+      <option value="indefinido">indefinido</option>
       <option value="lobatos">Lobatos</option>
       <option value="golondrinas">Golondrinas</option>
       <option value="tropa">Tropa</option>
@@ -41,6 +41,10 @@
       <option value="caminantes">Caminantes</option>
     </select>
     <input type="text" name="descripcion" placeholder="descripcion" class="form-control m-2" value="{{ old('descripcion') }}">
+    <div class="custom-file m-2">
+      <input type="file" class="custom-file-input" id="avatar" name="avatar">
+      <label class="custom-file-label" for="customFile">cargar imagen</label>
+    </div>
     <button class="btn btn-primary btn-block m-2" type="submit">Agregar</button>
   </form>
 </div>

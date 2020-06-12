@@ -21,6 +21,7 @@
           <div class="card-body">
             <div class="row">
                 <div class="col-4">
+                {{-- <img src="{{ url('uploads/image/staff/' . $staff->avatar) }}" class="card-img-top" alt=""> --}}
                   <img src={{ asset("asset/imagen/imagen4.jpeg")}} class="card-img-top" alt="...">
                 </div>
                 <div class="col-8">

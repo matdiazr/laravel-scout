@@ -73,7 +73,8 @@ class PagesController extends Controller
         $request->validate([
             'nombre' => 'required',
             'edad' => 'required',
-            'curso' => 'required'
+            'curso' => 'required',
+            // 'avatar' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $staffNuevo = new App\Staff;
@@ -84,6 +85,24 @@ class PagesController extends Controller
         $staffNuevo->curso = $request->curso;
         $staffNuevo->rama = $request->rama;
         $staffNuevo->descripcion = $request->descripcion;
+
+        //proceso de imagen pausado
+        // if($file = $request->file('avatar')){
+        //     $destinationPath = 'uploads/image/staff/';
+        //     $profileImage = date('YmdHis') . '.' . $files->getClientOriginalExtension();
+        //     $files->move($destinationPath, $profileImage);
+        //     $staffNuevo->avatar = $profileImage;
+
+        //     //metodo antiguo
+        //     // $file = $request->file('avatar');
+        //     // $extension = $file->getClientOriginalExtension();
+        //     // $filename = time() . '.' . $extension;
+        //     // $file->move('uploads/staff/', $file);
+        //     // $staffNuevo->avatar = $file;
+        // } else {
+        //     return $request;
+        //     $staffNuevo->avatar = '';
+        // }
 
         $staffNuevo->save();
 

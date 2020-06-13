@@ -10,6 +10,7 @@
         <a href="{{ route('noticias.detalle', $post) }}">
           <img src={{ asset("asset/imagen/imagen0.jpeg")}} class="card-img-top" alt="...">
           <div class="card-body">
+          <p class="card-text">{{ $post->created_at }}</p>
             <h5 class="card-title">{{ $post->titulo }}</h5>
           {{-- <p class="card-text">{{ $post->bajada }}</p> --}}
             {{-- <a href="{{ route('noticias.detalle', $post) }}" class="btn btn-primary">Ver Más</a> --}}

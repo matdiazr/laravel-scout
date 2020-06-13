@@ -7,6 +7,11 @@ use App;
 
 class PagesController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
     public function portada(){
         $last_posts = App\Post::latest()->take(3)->get();
         return view('portada', compact('last_posts'));
@@ -14,6 +19,7 @@ class PagesController extends Controller
 
     public function noticias(){
         $all_posts = App\Post::latest()->paginate(6);
+        // return $all_posts;
         return view('posts.posts', compact('all_posts'));
     }
     

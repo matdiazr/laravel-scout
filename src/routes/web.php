@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/portada', 'PagesController@portada')->name('portada');
+Route::get('/', 'PagesController@portada')->name('portada');
 
 Route::get('noticias', 'PagesController@noticias')->name('noticias');
 Route::get('noticias/{id}', 'PagesController@detallePost')->name('noticias.detalle');
@@ -40,3 +40,10 @@ Route::get('test/{string?}', function ($string = "sin texto"){
 
 //atajo para retornar views
 // Route::view('/posts', 'posts');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

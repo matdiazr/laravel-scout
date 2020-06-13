@@ -9,8 +9,10 @@
 
     <div class="offset-lg-2 col-lg-8">
       <h3>{{ $post->titulo }}</h3>
+      <h5>{{ $post->created_at }}</h5>
+      <div class="w-100 border my-3"></div>
       <h4>{{ $post->bajada }}</h4>
-      <div class="w-100 border"></div>
+      <div class="w-100 border my-3"></div>
       <p>{{ $post->descripcion }}</p>
     </div>
   </div>

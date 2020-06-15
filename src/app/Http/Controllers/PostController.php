@@ -45,14 +45,19 @@ class PostController extends Controller
         //retorna todo el contenido del formulario
         // return $request->all();
 
+        //retorna los datos del autor
+        // return auth()->user();
+
         $request->validate([
             'titulo' => 'required',
             'bajada' => 'required',
             'descripcion' => 'required'
         ]);
 
-        $postNuevo = new App\Post;
+        $postNuevo = new Post;
         $postNuevo->estado = true;
+        $postNuevo->autor = auth()->user()->name . " / " . auth()->user()->email;
+        $postNuevo->tipo = $request->tipo;
         $postNuevo->titulo = $request->titulo;
         $postNuevo->bajada = $request->bajada;
         $postNuevo->descripcion = $request->descripcion;

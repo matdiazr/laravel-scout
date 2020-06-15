@@ -3,6 +3,25 @@
 @section('content')
 <div class="container mt-3">
   <div class="row">
+    <div class="col-lg-12 justify-content-center my-3">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Scout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Deportes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Salud</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Criminal</a>
+        </li>
+       
+      </ul>
+    </div>  
+
+    <div class="w-100 border mb-5"></div>
 
     @foreach ($all_posts as $post)
     <div class="col-lg-4 col-sm-6 col-12 mb-3">

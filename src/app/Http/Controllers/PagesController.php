@@ -18,6 +18,17 @@ class PagesController extends Controller
         return view('posts.posts', compact('all_posts'));
     }
     
+    public function noticiaDetalle($id)
+    {
+        $post = App\Post::findOrFail($id);
+        return view('posts.detalle', compact('post'));
+    }
+
+    public function staffs(){
+        $all_staff = App\Staff::all();
+        return view('staff', compact('all_staff'));
+    }
+
     public function ramas($name = null){
         return view('ramas', compact('name'));
     }

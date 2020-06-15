@@ -49,7 +49,7 @@
                   Admin
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                  <a class="dropdown-item" href="{{ route('noticias.form') }}">Posts</a>
+                  <a class="dropdown-item" href="{{ route('noticias.form') }}">Post</a>
                   <a class="dropdown-item" href="{{ route('staff.form') }}">Staff</a>
                 </div>
               </li>

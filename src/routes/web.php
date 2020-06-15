@@ -20,15 +20,15 @@ Route::get('ramas/{name?}', 'PagesController@ramas')->name('ramas');
 Route::view('nosotros', 'aboutus')->name('nosotros');
 
 //post
-Route::get('noticias', 'PostController@index')->name('noticias');
-Route::get('noticias/{id}', 'PostController@show')->name('noticias.detalle');
+Route::get('noticias', 'PagesController@noticias')->name('noticias');
+Route::get('noticias/{id}', 'PagesController@noticiaDetalle')->name('noticias.detalle');
 Route::get('admin/noticias', 'PostController@create')->name('noticias.form');
 Route::post('admin/noticias', 'PostController@store')->name('noticias.create');
 
 
 
 //staff
-Route::get('staff', 'StaffController@index')->name('staff');
+Route::get('staff', 'PagesController@staffs')->name('staff');
 Route::get('admin/staff', 'StaffController@create')->name('staff.form');
 Route::post('admin/staff', 'StaffController@store')->name('staff.create');
 Route::get('admin/staff/editar/{id}', 'StaffController@edit')->name('staff.edit');

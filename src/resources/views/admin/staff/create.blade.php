@@ -43,7 +43,7 @@
     <input type="text" name="descripcion" placeholder="descripcion" class="form-control m-2" value="{{ old('descripcion') }}">
     <div class="custom-file m-2">
       <input type="file" class="custom-file-input" id="avatar" name="avatar">
-      <label class="custom-file-label" for="customFile">cargar imagen</label>
+      <label class="custom-file-label" for="customFile" data-browse="Elegir">Seleccionar Imagen</label>
     </div>
     <button class="btn btn-primary btn-block m-2" type="submit">Agregar</button>
   </form>

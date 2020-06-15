@@ -24,6 +24,8 @@ Route::get('noticias', 'PagesController@noticias')->name('noticias');
 Route::get('noticias/{id}', 'PagesController@noticiaDetalle')->name('noticias.detalle');
 Route::get('admin/noticias', 'PostController@create')->name('noticias.form');
 Route::post('admin/noticias', 'PostController@store')->name('noticias.create');
+Route::get('admin/noticias/editar/{id}', 'PostController@edit')->name('post.edit');
+Route::put('admin/noticias/editar/{id}', 'PostController@update')->name('post.update');
 
 
 

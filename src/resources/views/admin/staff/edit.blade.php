@@ -16,9 +16,9 @@
       <div class="col-lg-6">
         <label class="col-lg-12" for="nombre">Nombre :</label>
         <input class="col-lg-12 mb-2 form-control" type="text" name="nombre" value="{{ $staff->nombre}}">
-        <label class="col-lg-12" for="nombre">Edad :</label>
+        <label class="col-lg-12" for="edad">Edad :</label>
         <input class="col-lg-12 mb-2 form-control" type="text" name="edad" value="{{ $staff->edad}}">
-        <label class="col-lg-12" for="nombre">Curso :</label>
+        <label class="col-lg-12" for="curso">Curso :</label>
         <select name="curso" class="custom-select custom-select mb-2" id="">
           <option value="{{ $staff->curso }}">{{ $staff->curso }}</option>
           <option value="ninguno">Ninguno</option>
@@ -27,7 +27,7 @@
           <option value="avanzado">Avanzado</option>
           <option value="formador">Formador</option>
         </select>
-        <label class="col-lg-12" for="nombre">Rama :</label>
+        <label class="col-lg-12" for="rama">Rama :</label>
         <select name="rama" class="custom-select custom-select mb-2" id="">
           <option value="{{ $staff->rama }}">{{ $staff->rama }}</option>
           <option value="indefinido">Indefinido</option>

@@ -16,6 +16,7 @@
     <input type="text" name="bajada" placeholder="bajada" class="form-control m-2" id="">
     <select name="tipo" class="custom-select custom-select-md m-2" id="">
       <option value="scout">Scout</option>
+      <option value="campamento">Campamento</option>
       <option value="deporte">Deporte</option>
       <option value="salud">Salud</option>
       <option value="criminal">Criminal</option>
@@ -40,7 +41,7 @@
       <tr>
         <th scope="row">{{ $post->id }}</th>
         <td>{{ $post->titulo }}</td>
-        {{-- <td><a href="{{ route('post.edit', $post) }}" class="btn btn-warning btn-sm">Editar</a></td> --}}
+        <td><a href="{{ route('post.edit', $post) }}" class="btn btn-warning btn-sm">Editar</a></td>
         {{-- <td>
         <form action="{{ route('post.delete', $staff) }}" method="POST">
             @method('DELETE')

@@ -21,7 +21,8 @@ class PagesController extends Controller
     public function noticiaDetalle($id)
     {
         $post = App\Post::findOrFail($id);
-        return view('posts.detalle', compact('post'));
+        $post_type = App\Post::where('tipo', $post->tipo)->WhereNotIn('id', [$id])->latest()->take(3)->get();
+        return view('posts.detalle', compact('post', 'post_type'));
     }
 
     public function staffs(){

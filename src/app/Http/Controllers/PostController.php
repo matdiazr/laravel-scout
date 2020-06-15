@@ -56,7 +56,7 @@ class PostController extends Controller
 
         $postNuevo = new Post;
         $postNuevo->estado = true;
-        $postNuevo->autor = auth()->user()->name . " / " . auth()->user()->email;
+        $postNuevo->autor = auth()->user()->name;
         $postNuevo->tipo = $request->tipo;
         $postNuevo->titulo = $request->titulo;
         $postNuevo->bajada = $request->bajada;
@@ -86,9 +86,10 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -98,9 +99,18 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        //
+        $postUpdate = Post::findOrFail($id);
+        $postUpdate->titulo = $request->titulo;
+        $postUpdate->bajada = $request->bajada;
+        $postUpdate->descripcion = $request->descripcion;
+        $postUpdate->tipo = $request->tipo;
+        $postUpdate->autor = auth()->user()->name;
+
+        $postUpdate->save();
+        
+        return back()->with('respuesta', 'Post Modificado' );
     }
 
     /**

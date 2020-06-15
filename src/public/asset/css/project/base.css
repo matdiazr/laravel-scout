@@ -12,6 +12,9 @@ h4, h5, h6 {
   text-transform: uppercase;
   color: #2F2C32;
 }
+a {
+  text-decoration: none !important;
+}
 .content-yield {
   padding: 25px 0 25px;
 }

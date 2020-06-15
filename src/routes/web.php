@@ -21,6 +21,7 @@ Route::view('nosotros', 'aboutus')->name('nosotros');
 
 //post
 Route::get('noticias', 'PagesController@noticias')->name('noticias');
+Route::post('noticias', 'PagesController@filtrarNoticias')->name('filtrar.noticias');
 Route::get('noticias/{id}', 'PagesController@noticiaDetalle')->name('noticias.detalle');
 Route::get('admin/noticias', 'PostController@create')->name('noticias.form');
 Route::post('admin/noticias', 'PostController@store')->name('noticias.create');

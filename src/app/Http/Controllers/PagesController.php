@@ -14,8 +14,13 @@ class PagesController extends Controller
 
     public function noticias(){
         $all_posts = App\Post::latest()->paginate(6);
-        // return $all_posts;
-        return view('posts.posts', compact('all_posts'));
+        $respuesta = null;
+
+        if(empty($all_posts)){
+            $respuesta = "No se encontraron Noticias";
+        }
+
+        return view('posts.posts', compact('all_posts', 'respuesta'));
     }
     
     public function noticiaDetalle($id)
@@ -23,6 +28,18 @@ class PagesController extends Controller
         $post = App\Post::findOrFail($id);
         $post_type = App\Post::where('tipo', $post->tipo)->WhereNotIn('id', [$id])->latest()->take(3)->get();
         return view('posts.detalle', compact('post', 'post_type'));
+    }
+
+    public function filtrarNoticias(Request $request){
+        //mejorar la query con scope... proximamente
+        $all_posts = App\Post::where('titulo', 'like', "%$request->filtro%")->orWhere('tipo', 'like', "%$request->filtro%")->latest()->paginate(6);
+        $respuesta = null;
+
+        if(count($all_posts) == 0){
+            $respuesta = "No se encontraron Noticias";
+        }
+
+        return view('posts.posts', compact('all_posts', 'respuesta'));
     }
 
     public function staffs(){

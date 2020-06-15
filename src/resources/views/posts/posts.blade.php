@@ -9,6 +9,9 @@
           <a class="nav-link active" href="#">Scout</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link active" href="#">Campamento</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="#">Deportes</a>
         </li>
         <li class="nav-item">
@@ -17,11 +20,14 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Criminal</a>
         </li>
-       
       </ul>
     </div>  
 
     <div class="w-100 border mb-5"></div>
+
+    @if ($respuesta)
+        {{ $respuesta }}
+    @endif
 
     @foreach ($all_posts as $post)
     <div class="col-lg-4 col-sm-6 col-12 mb-3">
@@ -38,10 +44,12 @@
       </div>
     </div>
     @endforeach
+    <div class="w-100 border my-5"></div>
   </div>
-  <div class="w-100 border my-5"></div>
+
   <div class="row justify-content-center mb-3">
     {{ $all_posts->links() }}
   </div>
+
 </div>
 @endsection

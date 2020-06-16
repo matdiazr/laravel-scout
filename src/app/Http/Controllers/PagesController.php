@@ -42,6 +42,17 @@ class PagesController extends Controller
         return view('posts.posts', compact('all_posts', 'respuesta'));
     }
 
+    public function filtrarNoticiasTipo($string){
+        $all_posts = App\Post::where('tipo', 'like', "%$string%")->latest()->paginate(6);
+        $respuesta = null;
+
+        if(count($all_posts) == 0){
+            $respuesta = "No se encontraron Noticias";
+        }
+
+        return view('posts.posts', compact('all_posts', 'respuesta'));
+    }
+
     public function staffs(){
         $all_staff = App\Staff::all();
         return view('staff', compact('all_staff'));

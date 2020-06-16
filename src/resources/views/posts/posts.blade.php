@@ -3,22 +3,25 @@
 @section('content')
 <div class="container mt-3">
   <div class="row">
-    <div class="col-lg-12 justify-content-center my-3">
+    <div class="col-lg-12 justify-content-center my-3 menu-tipo">
       <ul class="nav justify-content-center">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Scout</a>
+          <a class="nav-link" href="{{ route('filtrar.tipo', 'scout') }}">Scout</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Campamento</a>
+          <a class="nav-link" href="{{ route('filtrar.tipo', 'evento') }}">Evento</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Deportes</a>
+          <a class="nav-link" href="{{ route('filtrar.tipo', 'campamento') }}">Campamento</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Salud</a>
+          <a class="nav-link" href="{{ route('filtrar.tipo', 'deporte') }}">Deportes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Criminal</a>
+          <a class="nav-link" href="{{ route('filtrar.tipo', 'salud') }}">Salud</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{{ route('filtrar.tipo', 'criminal') }}">Criminal</a>
         </li>
       </ul>
     </div>  

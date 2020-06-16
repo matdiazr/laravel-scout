@@ -31,8 +31,10 @@ a {
   border: 1px solid #2F2C32 !important;
 }
 footer {
-  height: 50px;
   background-color: #2F2C32;
+}
+footer a, footer p {
+  color: white;
 }
 /* home blade */
 #carouselHome {
@@ -45,4 +47,19 @@ footer {
 .titulo-imagen-destacada h2 {
   padding-top: 30px;
   font-weight: bold;
+}
+/* staff blade */
+.menu-tipo a {
+  font-weight: bold;
+  color: #D9BA06;
+}
+.menu-tipo a:hover, .menu-tipo a:focus, .menu-tipo a:active, .menu-tipo a.active {
+  color: #2F2C32;
+}
+/* aboutus blade */
+.color1, .color2, .color3 {
+  height: 150 !important;
+  width: 50 !important;
+  border-radius: 50%;
+  background-color: #2F2C32 ;
 }

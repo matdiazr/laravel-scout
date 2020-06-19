@@ -5,24 +5,11 @@
   <div class="row">
     <div class="col-lg-12 justify-content-center my-3 menu-tipo">
       <ul class="nav justify-content-center">
+        @foreach ($all_category as $category)
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('filtrar.tipo', 'scout') }}"><h2>Scout</h2></a>
+          <a class="nav-link" href="{{ route('filtrar.tipo', $category->id) }}">{{ $category->nombre }}</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('filtrar.tipo', 'evento') }}"><h2>Evento</h2></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('filtrar.tipo', 'campamento') }}"><h2>Campamento</h2></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('filtrar.tipo', 'deporte') }}"><h2>Deportes</h2></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('filtrar.tipo', 'salud') }}"><h2>Salud</h2></a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="{{ route('filtrar.tipo', 'criminal') }}"><h2>Criminal</h2></a>
-        </li>
+        @endforeach
       </ul>
     </div>  
 
@@ -40,7 +27,7 @@
           <div class="card-body">
           <p class="card-text">{{ $post->created_at }}</p>
             <h5 class="card-title">{{ $post->titulo }}</h5>
-          {{-- <p class="card-text">{{ $post->bajada }}</p> --}}
+            {{-- <p class="card-text">{{ $post->bajada }}</p> --}}
             {{-- <a href="{{ route('noticias.detalle', $post) }}" class="btn btn-primary">Ver Más</a> --}}
           </div>
         </a>

@@ -14,20 +14,30 @@ class PagesController extends Controller
 
     public function noticias(){
         $all_posts = App\Post::latest()->paginate(6);
+        $all_category = App\Categoria::all();
         $respuesta = null;
 
         if(empty($all_posts)){
             $respuesta = "No se encontraron Noticias";
         }
 
-        return view('posts.posts', compact('all_posts', 'respuesta'));
+        return view('posts.posts', compact('all_posts', 'respuesta', 'all_category'));
     }
     
     public function noticiaDetalle($id)
     {
         $post = App\Post::findOrFail($id);
-        $post_type = App\Post::where('tipo', $post->tipo)->WhereNotIn('id', [$id])->latest()->take(3)->get();
-        return view('posts.detalle', compact('post', 'post_type'));
+        // $categoria_id = $post->categoria->first()->id;
+        $categoria_nombre = "evento";
+
+        $post_relacionados = App\Post::whereNotIn('id', [$id])->whereHas('categoria', function ($q) use ($categoria_nombre) {
+            $q->where('nombre', $categoria_nombre); 
+        })->latest()->take(3)->get();
+
+        // $post_relacionados = App\Post::where('categoria->first()', $post->categoria->first()->id)->get();
+        // $post_type = App\Post::where('tipo', $post->tipo)->WhereNotIn('id', [$id])->latest()->take(3)->get();
+        
+        return view('posts.detalle', compact('post', 'post_relacionados'));
     }
 
     public function filtrarNoticias(Request $request){
@@ -42,8 +52,8 @@ class PagesController extends Controller
         return view('posts.posts', compact('all_posts', 'respuesta'));
     }
 
-    public function filtrarNoticiasTipo($string){
-        $all_posts = App\Post::where('tipo', 'like', "%$string%")->latest()->paginate(6);
+    public function filtrarNoticiasTipo($id){
+        $all_posts = App\Post::where('category_id', $id)->latest()->paginate(6);
         $respuesta = null;
 
         if(count($all_posts) == 0){

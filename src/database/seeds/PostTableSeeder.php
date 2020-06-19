@@ -14,14 +14,15 @@ class PostTableSeeder extends Seeder
      */
     public function run()
     {
-        User::truncate();
+        // User::truncate();
 
         $user = new User();
         $user->name = "matias";
         $user->email = "matitroll@gmail.com";
-        $user->password = "finoyvulgar";
+        $user->password = bcrypt("finoyvulgar");
+        $user->save();
 
-        Categoria::truncate();
+        // Categoria::truncate();
 
         $categoria = new Categoria();
         $categoria->nombre = "Evento";
@@ -43,7 +44,7 @@ class PostTableSeeder extends Seeder
         $categoria->nombre = "Actividades";
         $categoria->save();
     
-        Post::truncate();
+        // Post::truncate();
 
         $post = new Post();
         $post->estado = true;

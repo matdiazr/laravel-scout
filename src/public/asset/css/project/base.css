@@ -58,8 +58,22 @@ footer a, footer p {
 }
 /* aboutus blade */
 .color1, .color2, .color3 {
-  height: 150 !important;
-  width: 50 !important;
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
-  background-color: #2F2C32 ;
+  
+  display: inline-block;
+}
+.contenedor-color {
+  background-color: white;
+  border-radius: 15px;
+}
+.color1 {
+  background-color: #2F2C32;
+}
+.color2 {
+  background-color: #D9BA06;
+}
+.color3 {
+  background-color: #E5E1E0;
 }

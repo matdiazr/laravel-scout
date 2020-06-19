@@ -22,7 +22,7 @@ Route::view('nosotros', 'aboutus')->name('nosotros');
 //post
 Route::get('noticias', 'PagesController@noticias')->name('noticias');
 Route::post('noticias', 'PagesController@filtrarNoticias')->name('filtrar.noticias');
-Route::get('noticias/{string?}', 'PagesController@filtrarNoticiasTipo')->name('filtrar.tipo');
+Route::get('noticias/tipo/{string?}', 'PagesController@filtrarNoticiasTipo')->name('filtrar.tipo');
 
 
 Route::get('noticias/{id}', 'PagesController@noticiaDetalle')->name('noticias.detalle');

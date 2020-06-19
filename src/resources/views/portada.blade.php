@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-  <div class="mt-4 row justify-content-center">
+  <div class="my-4 row justify-content-center">
     <div id="carouselHome" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselHome" data-slide-to="0" class="active"></li>

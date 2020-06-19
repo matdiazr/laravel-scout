@@ -1,27 +1,27 @@
 @extends('base')
 
 @section('content')
-<div class="container mt-3">
+<div class="container my-3">
   <div class="row">
     <div class="col-lg-12 justify-content-center my-3 menu-tipo">
       <ul class="nav justify-content-center">
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('filtrar.tipo', 'scout') }}">Scout</a>
+          <a class="nav-link" href="{{ route('filtrar.tipo', 'scout') }}"><h2>Scout</h2></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('filtrar.tipo', 'evento') }}">Evento</a>
+          <a class="nav-link" href="{{ route('filtrar.tipo', 'evento') }}"><h2>Evento</h2></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('filtrar.tipo', 'campamento') }}">Campamento</a>
+          <a class="nav-link" href="{{ route('filtrar.tipo', 'campamento') }}"><h2>Campamento</h2></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('filtrar.tipo', 'deporte') }}">Deportes</a>
+          <a class="nav-link" href="{{ route('filtrar.tipo', 'deporte') }}"><h2>Deportes</h2></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('filtrar.tipo', 'salud') }}">Salud</a>
+          <a class="nav-link" href="{{ route('filtrar.tipo', 'salud') }}"><h2>Salud</h2></a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="{{ route('filtrar.tipo', 'criminal') }}">Criminal</a>
+        <a class="nav-link" href="{{ route('filtrar.tipo', 'criminal') }}"><h2>Criminal</h2></a>
         </li>
       </ul>
     </div>  

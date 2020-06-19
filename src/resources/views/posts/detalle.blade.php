@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('content')
-<div class="container">
+<div class="container my-4">
   <div class="row bg-white p-4">
     <div class="offset-lg-1 col-lg-7 mb-3">
       <img src={{ asset("asset/imagen/imagen0.jpeg")}} width="600" class="img-fluid" alt="...">
@@ -16,7 +16,7 @@
     </div>
     
     <div class="col-lg-4 ">
-      <h2>Relacionadas:<br>{{ $post->tipo }}</h2>
+      <h2 class="pl-3">Relacionadas:<br>{{ $post->tipo }}</h2>
       <div>
         @foreach ($post_type as $last_posts)
         <div class="col-lg-4 col-sm-6 col-12 mb-3">

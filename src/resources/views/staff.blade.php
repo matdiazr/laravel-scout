@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('content')
-  <div class="container my-3">
+  <div class="container my-4">
     <h1 class="my-5">Equipo de trabajo</h1>
 
     <div class="accordion" id="accordionExample">

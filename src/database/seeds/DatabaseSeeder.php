@@ -11,6 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+        //for laravel 6 o mayor
+        // $this->call(PostTableSeeder);
+        $this->call(PostTableSeeder::class);
     }
 }

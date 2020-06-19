@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->boolean('estado');
             $table->string('titulo');
             $table->string('bajada');
+            $table->unsignedInteger('autor_id');
             $table->text('descripcion');
             
         });

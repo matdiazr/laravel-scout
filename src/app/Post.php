@@ -2,21 +2,16 @@
 
 namespace App;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    public function scopeTitulos($query, $titulo) {
-    	if ($titulo) {
-    		return $query->where('titulo','like',"%$titulo%");
-    	}
-    }
+	public function autor(){ //$libro->categoria->nombre
+		return $this->belongsTo(User::class); //Pertenece a una categoría.
+	}
 
-
-
-    public function scopeTipos($query, $tipo) {
-    	if ($tipo) {
-    		return $query->where('tipo','like',"%$tipo%");
-    	}
-    }
+	public function categoria(){
+		return $this->belongsToMany(Categoria::class); // Muchos a muchos
+	}
 }

@@ -30,6 +30,7 @@ Route::get('admin/noticias', 'PostController@create')->name('noticias.form');
 Route::post('admin/noticias', 'PostController@store')->name('noticias.create');
 Route::get('admin/noticias/editar/{id}', 'PostController@edit')->name('post.edit');
 Route::put('admin/noticias/editar/{id}', 'PostController@update')->name('post.update');
+Route::delete('admin/noticias/eliminar/{id}','PostController@destroy')->name('post.delete');
 
 
 
@@ -39,7 +40,7 @@ Route::get('admin/staff', 'StaffController@create')->name('staff.form');
 Route::post('admin/staff', 'StaffController@store')->name('staff.create');
 Route::get('admin/staff/editar/{id}', 'StaffController@edit')->name('staff.edit');
 Route::put('admin/staff/editar/{id}', 'StaffController@update')->name('staff.update');
-Route::delete('eliminar/{id}','StaffController@destroy')->name('staff.delete');
+Route::delete('admin/staff/eliminar/{id}','StaffController@destroy')->name('staff.delete');
 
 
 //retornando una ruta con un string + una variable opcional y definimos un valor por defecto

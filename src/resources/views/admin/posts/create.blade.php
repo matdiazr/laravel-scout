@@ -14,12 +14,11 @@
     @csrf
     <input type="text" name="titulo" placeholder="titulo" class="form-control m-2" id="">
     <input type="text" name="bajada" placeholder="bajada" class="form-control m-2" id="">
-    <select name="tipo" class="custom-select custom-select-md m-2" id="">
-      <option value="scout">Scout</option>
-      <option value="campamento">Campamento</option>
-      <option value="deporte">Deporte</option>
-      <option value="salud">Salud</option>
-      <option value="criminal">Criminal</option>
+    <select name="categoria" class="custom-select custom-select-md m-2">
+      <option value="" disabled selected>Categoria</option>
+      @foreach ($all_categoria as $categoria)
+      <option value="{{ $categoria->id }}">{{ $categoria->nombre}}</option>
+      @endforeach
     </select>
     <textarea name="descripcion" id="" cols="30" rows="10" class="col-lg-12 form-control m-2" placeholder="descripcion..."></textarea>
     <button class="btn btn-primary btn-block m-2" type="submit">Agregar</button>
@@ -42,13 +41,13 @@
         <th scope="row">{{ $post->id }}</th>
         <td>{{ $post->titulo }}</td>
         <td><a href="{{ route('post.edit', $post) }}" class="btn btn-warning btn-sm">Editar</a></td>
-        {{-- <td>
-        <form action="{{ route('post.delete', $staff) }}" method="POST">
+        <td>
+        <form action="{{ route('post.delete', $post) }}" method="POST">
             @method('DELETE')
             @csrf
             <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
           </form>
-        </td> --}}
+        </td>
       </tr>
       @endforeach
     </tbody>

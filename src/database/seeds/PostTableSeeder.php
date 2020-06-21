@@ -25,23 +25,23 @@ class PostTableSeeder extends Seeder
         // Categoria::truncate();
 
         $categoria = new Categoria();
-        $categoria->nombre = "Evento";
+        $categoria->nombre = "evento";
         $categoria->save();
 
         $categoria = new Categoria();
-        $categoria->nombre = "Campamento";
+        $categoria->nombre = "campamento";
         $categoria->save();
 
         $categoria = new Categoria();
-        $categoria->nombre = "Reunion";
+        $categoria->nombre = "reunion";
         $categoria->save();
 
         $categoria = new Categoria();
-        $categoria->nombre = "Curso";
+        $categoria->nombre = "curso";
         $categoria->save();
 
         $categoria = new Categoria();
-        $categoria->nombre = "Actividades";
+        $categoria->nombre = "actividades";
         $categoria->save();
     
         // Post::truncate();

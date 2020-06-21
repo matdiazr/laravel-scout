@@ -7,7 +7,7 @@
       <ul class="nav justify-content-center">
         @foreach ($all_category as $category)
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('filtrar.tipo', $category->id) }}">{{ $category->nombre }}</a>
+          <a class="nav-link" href="{{ route('filtrar.tipo', $category->nombre) }}">{{ $category->nombre }}</a>
         </li>
         @endforeach
       </ul>
@@ -25,7 +25,7 @@
         <a href="{{ route('noticias.detalle', $post) }}">
           <img src={{ asset("asset/imagen/imagen0.jpeg")}} class="card-img-top" alt="...">
           <div class="card-body">
-          <p class="card-text">{{ $post->created_at }}</p>
+            <p class="card-text">{{ date('d-m-Y', strtotime($post->created_at ))}}</p>
             <h5 class="card-title">{{ $post->titulo }}</h5>
             {{-- <p class="card-text">{{ $post->bajada }}</p> --}}
             {{-- <a href="{{ route('noticias.detalle', $post) }}" class="btn btn-primary">Ver Más</a> --}}

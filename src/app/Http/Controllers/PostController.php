@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use App\Post;
+use App\Categoria;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -31,7 +33,8 @@ class PostController extends Controller
     public function create()
     {
         $all_posts = Post::latest()->paginate(5);
-        return view('admin.posts.create', compact('all_posts'));
+        $all_categoria = App\Categoria::all();
+        return view('admin.posts.create', compact('all_posts', 'all_categoria'));
     }
 
     /**
@@ -48,21 +51,24 @@ class PostController extends Controller
         //retorna los datos del autor
         // return auth()->user();
 
-        $request->validate([
-            'titulo' => 'required',
-            'bajada' => 'required',
-            'descripcion' => 'required'
-        ]);
+        // $request->validate([
+        //     'titulo' => 'required',
+        //     'bajada' => 'required',
+        //     'descripcion' => 'required'
+        // ]);
 
         $postNuevo = new Post;
         $postNuevo->estado = true;
-        $postNuevo->autor = auth()->user()->name;
-        $postNuevo->tipo = $request->tipo;
+        $postNuevo->autor_id = auth()->user()->id;
         $postNuevo->titulo = $request->titulo;
         $postNuevo->bajada = $request->bajada;
         $postNuevo->descripcion = $request->descripcion;
 
+        return $request->categoria;
+
         $postNuevo->save();
+        
+        $postNuevo->categoria()->attach($request->categoria);
 
         //nos devuelve a la misma pagina
         return back()->with('respuesta', 'Post Agregado');
@@ -119,8 +125,13 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-        //
+        $postEliminar = Post::findOrFail($id);
+        $categoriaEliminar = Categoria::findOrFail($postEliminar->categoria);
+        $postEliminar->categoria()->detach($categoriaEliminar);
+        $postEliminar->delete();
+
+        return back()->with('respuesta', 'Post Eliminado');
     }
 }

@@ -47,10 +47,12 @@ Route::delete('admin/staff/eliminar/{id}','StaffController@destroy')->name('staf
 Route::get('test/{string?}', function ($string = "sin texto"){
     return 'texto de prueba: ' . $string ;
     //agregamos un where donde le decimos a la variable mediante una expresion regular que valores puede recibir como parametro
-})->where('string','[0-9]+')->middleware('auth');;
+})->where('string','[0-9]+')->middleware('auth');
 
 //atajo para retornar views
 // Route::view('/posts', 'posts');
+//ruta de controlador y con session
+// Route::resource('/modelo','modelo@controlador')->middleware('auth');
 
 //Auth
 Auth::routes();

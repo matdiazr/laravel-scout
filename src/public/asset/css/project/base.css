@@ -48,6 +48,14 @@ footer a, footer p {
   padding-top: 30px;
   font-weight: bold;
 }
+.nav-categoria {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.card-categoria {
+  color: #D9BA06;
+  margin: 0;
+}
 /* staff blade */
 .menu-tipo a {
   font-weight: bold;

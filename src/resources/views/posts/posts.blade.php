@@ -4,7 +4,7 @@
 <div class="container my-3">
   <div class="row">
     <div class="col-lg-12 justify-content-center my-3 menu-tipo">
-      <ul class="nav justify-content-center">
+      <ul class="nav justify-content-center nav-categoria">
         @foreach ($all_category as $category)
         <li class="nav-item">
           <a class="nav-link" href="{{ route('filtrar.tipo', $category->nombre) }}">{{ $category->nombre }}</a>
@@ -25,6 +25,13 @@
         <a href="{{ route('noticias.detalle', $post) }}">
           <img src={{ asset("asset/imagen/imagen0.jpeg")}} class="card-img-top" alt="...">
           <div class="card-body">
+            <ul class="nav p-0">
+              @foreach ($post->categoria as $tipo)
+              <li class="nav-item">
+                <p class="card-categoria"> {{ $tipo->nombre }}@if($loop->last)@else / @endif</p>
+              </li>
+              @endforeach
+            </ul>
             <p class="card-text">{{ date('d-m-Y', strtotime($post->created_at ))}}</p>
             <h5 class="card-title">{{ $post->titulo }}</h5>
             {{-- <p class="card-text">{{ $post->bajada }}</p> --}}

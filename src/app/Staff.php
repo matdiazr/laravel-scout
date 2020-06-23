@@ -6,12 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Staff extends Model
 {
-    protected $fillable = [
-        'nombre',
-        'edad',
-        'curso',
-        'rama',
-        'descripcion',
-        'avatar',
-    ];
+    public function curso(){ 
+		return $this->belongsTo(Curso::class); 
+    }
+
+    public function rama(){
+        return $this->belongsTo(Rama::class);
+    }
 }

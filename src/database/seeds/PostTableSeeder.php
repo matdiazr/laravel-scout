@@ -3,6 +3,9 @@
 use App\Categoria;
 use App\Post;
 use App\User;
+use App\Staff;
+use App\Curso;
+use App\Rama;
 use Illuminate\Database\Seeder;
 
 class PostTableSeeder extends Seeder
@@ -86,6 +89,103 @@ class PostTableSeeder extends Seeder
 
         $post->categoria()->attach([1,3,4]);
         
+        $curso = new Curso();
+        $curso->nombre = "ninguno";
+        $curso->save();
+
+        $curso = new Curso();
+        $curso->nombre = "básico";
+        $curso->save();
+
+        $curso = new Curso();
+        $curso->nombre = "medio";
+        $curso->save();
+
+        $curso = new Curso();
+        $curso->nombre = "avanzado";
+        $curso->save();
+
+        $curso = new Curso();
+        $curso->nombre = "formación";
+        $curso->save();
+
+        $rama = new Rama();
+        $rama->nombre = "lobatos";
+        $rama->save();
+
+        $rama = new Rama();
+        $rama->nombre = "golondrinas";
+        $rama->save();
+
+        $rama = new Rama();
+        $rama->nombre = "scouts";
+        $rama->save();
+
+        $rama = new Rama();
+        $rama->nombre = "guias";
+        $rama->save();
+
+        $rama = new Rama();
+        $rama->nombre = "pioneros";
+        $rama->save();
+
+        $rama = new Rama();
+        $rama->nombre = "caminantes";
+        $rama->save();
+
+        $staff = new Staff();
+        $staff->estado = true;
+        $staff->nombre = "matias";
+        $staff->edad = 24;
+        $staff->curso_id = 2;
+        $staff->rama_id = 5;
+        $staff->descripcion = "joven amante del aprendizaje";
+        $staff->save();
+
+        $staff = new Staff();
+        $staff->estado = true;
+        $staff->nombre = "emerson";
+        $staff->edad = 20;
+        $staff->curso_id = 3;
+        $staff->rama_id = 1;
+        $staff->descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non porttitor ante. Fusce blandit sed velit at dapibus. Duis porta convallis odio vel feugiat. Integer gravida ex est,";
+        $staff->save();
+
+        $staff = new Staff();
+        $staff->estado = true;
+        $staff->nombre = "jose";
+        $staff->edad = 23;
+        $staff->curso_id = 4;
+        $staff->rama_id = 4;
+        $staff->descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non porttitor ante. Fusce blandit sed velit at dapibus. Duis porta convallis odio vel feugiat. Integer gravida ex est,";
+        $staff->save();
+
+        $staff = new Staff();
+        $staff->estado = true;
+        $staff->nombre = "pacheco";
+        $staff->edad = 64;
+        $staff->curso_id = 4;
+        $staff->rama_id = 2;
+        $staff->descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non porttitor ante. Fusce blandit sed velit at dapibus. Duis porta convallis odio vel feugiat. Integer gravida ex est,";
+        $staff->save();
+
+        $staff = new Staff();
+        $staff->estado = true;
+        $staff->nombre = "alfredo";
+        $staff->edad = 38;
+        $staff->curso_id = 1;
+        $staff->rama_id = 1;
+        $staff->descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non porttitor ante. Fusce blandit sed velit at dapibus. Duis porta convallis odio vel feugiat. Integer gravida ex est,";
+        $staff->save();
+
+        $staff = new Staff();
+        $staff->estado = true;
+        $staff->nombre = "roberto";
+        $staff->edad = 40;
+        $staff->curso_id = 2;
+        $staff->rama_id = 2;
+        $staff->descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non porttitor ante. Fusce blandit sed velit at dapibus. Duis porta convallis odio vel feugiat. Integer gravida ex est,";
+        $staff->save();
     
     }
 }

@@ -8,9 +8,13 @@
   <link rel="stylesheet" href={{ asset("asset/css/bootstrap.min.css")}} >
   <link rel="stylesheet" href={{ asset("asset/css/project/base.css")}} >
   <script src= {{ asset("asset/js/bootstrap.min.js")}} ></script>
+  {{-- cargar vue --}}
+  <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 <body>
+  {{-- cargar Vue --}}
+  {{-- <div id="app"> --}}
   <header>
     <div class="container">
       <h2 class="display-4">Grupo Scout</h2>
@@ -136,6 +140,8 @@
       </div>
     </div>
   </footer>
+  {{-- cargar vue --}}
+  {{-- </div> --}}
 </body>
 
 <script src={{ asset("asset/js/jquery-3.5.1.slim.min.js")}}></script>

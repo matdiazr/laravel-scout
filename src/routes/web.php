@@ -55,3 +55,5 @@ Route::get('test/{string?}', function ($string = "sin texto"){
 //Auth
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::view('vue', 'vue')->name('vue');

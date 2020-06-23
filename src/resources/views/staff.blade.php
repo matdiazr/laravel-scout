@@ -25,8 +25,8 @@
                   <img src={{ asset("asset/imagen/imagen4.jpeg")}} class="card-img-top" alt="...">
                 </div>
                 <div class="col-8">
-                  <h6>rama: Pionero</h6>
-                  <h6>curso: {{ $staff->curso }}</h6>
+                  <h6>rama: {{ $staff->rama->nombre }}</h6>
+                  <h6>curso: {{ $staff->curso->nombre }}</h6>
                   <h6>edad: {{ $staff->edad }}</h6>
                 <p>{{ $staff->descripcion }}</p>
                 </div>

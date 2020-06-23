@@ -82,3 +82,7 @@ footer a, footer p {
 .color3 {
   background-color: #E5E1E0;
 }
+/* create post blade */
+.crear-categoria .titulo-categoria {
+  margin-top: 26px;
+}

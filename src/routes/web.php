@@ -52,7 +52,7 @@ Route::get('test/{string?}', function ($string = "sin texto"){
 //atajo para retornar views
 // Route::view('/posts', 'posts');
 //ruta de controlador y con session
-// Route::resource('/modelo','modelo@controlador')->middleware('auth');
+Route::resource('admin/categoria','CategoriaController')->middleware('auth');
 
 //Auth
 Auth::routes();

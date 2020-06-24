@@ -8,11 +8,14 @@
   <link rel="stylesheet" href={{ asset("asset/css/bootstrap.min.css")}} >
   <link rel="stylesheet" href={{ asset("asset/css/project/base.css")}} >
   {{-- cargar jquery antes que bootstrap cuando instalas vueJs --}}
-  <script src= {{ asset("asset/js/jquery-3.5.1.slim.min.js")}} ></script>
+  {{-- <script src= {{ asset("asset/js/jquery-3.5.1.slim.min.js")}} ></script> --}}
+  {{-- cargar vue --}}
+  <script src= {{ asset("js/app.js")}} defer></script>
   <script src= {{ asset("asset/js/bootstrap.min.js")}} ></script>
 
-  {{-- cargar vue --}}
-  <script src="{{ asset('js/app.js') }}" defer></script>
+
+
+ 
 </head>
 
 <body>
@@ -41,7 +44,7 @@
                 <a class="nav-link" href="{{ route('nosotros') }}">Nosotros</a>
               </li>
               <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Ramas
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -137,7 +140,7 @@
               <div class="gmap_canvas">
                 <iframe width="600" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q=puente%20alto&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
               </div>
-              <style>.mapouter{position:relative;text-align:right;height:250px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:600px;}</style>
+              {{-- <style>.mapouter{position:relative;text-align:right;height:250px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:600px;}</style> --}}
             </div>
           </div>
         </div>

@@ -6,14 +6,7 @@
       <button  class="btn btn-primary btn-block mx-2">Agregar</button>
     </form>
 
-    <!-- <ul class="list-group">
-      <li class="list-group-item" 
-        v-for="(categoria, index) in categorias" :key="index" >
-        <p>{{categoria.nombre}}</p>
-      </li>
-    </ul> -->
     <select name="categoria" class="custom-select custom-select-md m-2">
-      
       <option 
       v-for="(categoria, index) in categorias" :key="index">
         {{ categoria.nombre }}

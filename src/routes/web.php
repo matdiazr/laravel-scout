@@ -58,4 +58,3 @@ Route::resource('admin/categoria','CategoriaController')->middleware('auth');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::view('vue', 'vue')->name('vue');

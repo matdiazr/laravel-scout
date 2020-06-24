@@ -19,7 +19,7 @@
         <select name="categoria" class="custom-select custom-select-md m-2">
           <option value="" disabled selected>Categoria</option>
           @foreach ($all_categoria as $categoria)
-          <option value="{{ $categoria->id }}">{{ $categoria->nombre}}</option>
+            <option value="{{ $categoria->id }}">{{ $categoria->nombre}}</option>
           @endforeach
         </select>
         <textarea name="descripcion" id="" cols="30" rows="10" class="col-lg-12 form-control m-2" placeholder="descripcion..."></textarea>

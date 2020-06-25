@@ -64,7 +64,7 @@ class PostController extends Controller
         $postNuevo->bajada = $request->bajada;
         $postNuevo->descripcion = $request->descripcion;
 
-        return $request->categoria;
+        // return $request->categoria;
 
         $postNuevo->save();
         
@@ -128,8 +128,9 @@ class PostController extends Controller
     public function destroy($id)
     {
         $postEliminar = Post::findOrFail($id);
-        $categoriaEliminar = Categoria::findOrFail($postEliminar->categoria);
-        $postEliminar->categoria()->detach($categoriaEliminar);
+        foreach($postEliminar->categoria as $categoria){
+            $postEliminar->categoria()->detach($categoria);
+        }
         $postEliminar->delete();
 
         return back()->with('respuesta', 'Post Eliminado');

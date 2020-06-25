@@ -6,12 +6,12 @@
       <button  class="btn btn-primary btn-block mx-2">Agregar</button>
     </form>
 
-    <select name="categoria" class="custom-select custom-select-md m-2">
+    <!-- <select name="categoria" class="custom-select custom-select-md m-2">
       <option 
       v-for="(categoria, index) in categorias" :key="index">
         {{ categoria.nombre }}
       </option>
-    </select>
+    </select> -->
     
   </div>
 </template>

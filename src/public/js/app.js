@@ -37551,20 +37551,6 @@ var render = function() {
           _vm._v("Agregar")
         ])
       ]
-    ),
-    _vm._v(" "),
-    _c(
-      "select",
-      {
-        staticClass: "custom-select custom-select-md m-2",
-        attrs: { name: "categoria" }
-      },
-      _vm._l(_vm.categorias, function(categoria, index) {
-        return _c("option", { key: index }, [
-          _vm._v("\n      " + _vm._s(categoria.nombre) + "\n    ")
-        ])
-      }),
-      0
     )
   ])
 }
@@ -49804,15 +49790,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*!**************************************************************!*\
   !*** ./resources/js/components/CreateCategoriaComponent.vue ***!
   \**************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CreateCategoriaComponent_vue_vue_type_template_id_aec8b0de___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateCategoriaComponent.vue?vue&type=template&id=aec8b0de& */ "./resources/js/components/CreateCategoriaComponent.vue?vue&type=template&id=aec8b0de&");
 /* harmony import */ var _CreateCategoriaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateCategoriaComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/CreateCategoriaComponent.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _CreateCategoriaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _CreateCategoriaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -49842,7 +49827,7 @@ component.options.__file = "resources/js/components/CreateCategoriaComponent.vue
 /*!***************************************************************************************!*\
   !*** ./resources/js/components/CreateCategoriaComponent.vue?vue&type=script&lang=js& ***!
   \***************************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

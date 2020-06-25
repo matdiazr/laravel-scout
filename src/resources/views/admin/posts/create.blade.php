@@ -6,9 +6,9 @@
   <div class="row">
 
     @if (session('respuesta'))
-      <div class="alert alert-success m-2">
-        <p class="pl-2">{{ session('respuesta') }}</p>
-      </div>  
+    <div class="col-lg-12 alert alert-success m-2">
+      <p class="pl-2">{{ session('respuesta') }}</p>
+    </div>  
     @endif
 
     <div class="col-lg-10">

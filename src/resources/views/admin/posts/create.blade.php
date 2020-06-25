@@ -11,23 +11,28 @@
     </div>  
     @endif
 
-    <div class="col-lg-10">
+    <div class="col-lg-12">
       <form action="" method="POST">
         @csrf
         <input type="text" name="titulo" placeholder="titulo" class="form-control m-2" id="">
         <input type="text" name="bajada" placeholder="bajada" class="form-control m-2" id="">
-        <select name="categoria" class="custom-select custom-select-md m-2">
-          <option value="" disabled selected>Categoria</option>
-          @foreach ($all_categoria as $categoria)
-            <option value="{{ $categoria->id }}">{{ $categoria->nombre}}</option>
-          @endforeach
-        </select>
+        <div class="row">
+
+          <div class="col-lg-11">
+            <select name="categoria" class="custom-select custom-select-md m-2">
+              <option value="" disabled selected>Categoria</option>
+              @foreach ($all_categoria as $categoria)
+              <option value="{{ $categoria->id }}">{{ $categoria->nombre}}</option>
+              @endforeach
+            </select>
+          </div>
+          <div class="col-lg-1">
+            <create-categoria />
+          </div>
+        </div>
         <textarea name="descripcion" id="" cols="30" rows="10" class="col-lg-12 form-control m-2" placeholder="descripcion..."></textarea>
         <button class="btn btn-primary btn-block m-2" type="submit">Agregar</button>
       </form>
-    </div>
-    <div class="col-lg-2">
-        <create-categoria />
     </div>
   </div>
 </div>

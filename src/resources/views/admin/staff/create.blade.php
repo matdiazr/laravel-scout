@@ -10,7 +10,7 @@
     </div>  
   @endif
 
-  <form action="" method="POST">
+  <form action="" method="POST" enctype="multipart/form-data">
     @csrf
                
     @error('nombre')

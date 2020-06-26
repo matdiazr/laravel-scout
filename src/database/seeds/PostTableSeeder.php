@@ -136,6 +136,7 @@ class PostTableSeeder extends Seeder
         $staff = new Staff();
         $staff->estado = true;
         $staff->nombre = "matias";
+        $staff->avatar = "avatar.png";
         $staff->edad = 24;
         $staff->curso_id = 2;
         $staff->rama_id = 5;
@@ -145,6 +146,7 @@ class PostTableSeeder extends Seeder
         $staff = new Staff();
         $staff->estado = true;
         $staff->nombre = "emerson";
+        $staff->avatar = "avatar.png";
         $staff->edad = 20;
         $staff->curso_id = 3;
         $staff->rama_id = 1;
@@ -154,6 +156,7 @@ class PostTableSeeder extends Seeder
         $staff = new Staff();
         $staff->estado = true;
         $staff->nombre = "jose";
+        $staff->avatar = "avatar.png";
         $staff->edad = 23;
         $staff->curso_id = 4;
         $staff->rama_id = 4;
@@ -163,6 +166,7 @@ class PostTableSeeder extends Seeder
         $staff = new Staff();
         $staff->estado = true;
         $staff->nombre = "pacheco";
+        $staff->avatar = "avatar.png";
         $staff->edad = 64;
         $staff->curso_id = 4;
         $staff->rama_id = 2;
@@ -172,6 +176,7 @@ class PostTableSeeder extends Seeder
         $staff = new Staff();
         $staff->estado = true;
         $staff->nombre = "alfredo";
+        $staff->avatar = "avatar.png";
         $staff->edad = 38;
         $staff->curso_id = 1;
         $staff->rama_id = 1;
@@ -181,6 +186,7 @@ class PostTableSeeder extends Seeder
         $staff = new Staff();
         $staff->estado = true;
         $staff->nombre = "roberto";
+        $staff->avatar = "avatar.png";
         $staff->edad = 40;
         $staff->curso_id = 2;
         $staff->rama_id = 2;

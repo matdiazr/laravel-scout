@@ -51,31 +51,19 @@ class StaffController extends Controller
         ]);
 
         $staffNuevo = new Staff;
-        // agregar estado al modelo del 
-        // $staffNuevo->estado = true;
+        $staffNuevo->estado = true;
         $staffNuevo->nombre = $request->nombre;
         $staffNuevo->edad = $request->edad;
-        $staffNuevo->curso = $request->curso;
-        $staffNuevo->rama = $request->rama;
+        $staffNuevo->curso_id = 1;
+        $staffNuevo->rama_id = 1;
         $staffNuevo->descripcion = $request->descripcion;
 
-        //proceso de imagen pausado
-        // if($file = $request->file('avatar')){
-        //     $destinationPath = 'uploads/image/staff/';
-        //     $profileImage = date('YmdHis') . '.' . $files->getClientOriginalExtension();
-        //     $files->move($destinationPath, $profileImage);
-        //     $staffNuevo->avatar = $profileImage;
+        $image = $request->file('avatar');
 
-        //     //metodo antiguo
-        //     // $file = $request->file('avatar');
-        //     // $extension = $file->getClientOriginalExtension();
-        //     // $filename = time() . '.' . $extension;
-        //     // $file->move('uploads/staff/', $file);
-        //     // $staffNuevo->avatar = $file;
-        // } else {
-        //     return $request;
-        //     $staffNuevo->avatar = '';
-        // }
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('asset/imagen/staff/'), $new_name);
+
+        $staffNuevo->avatar = $new_name;
 
         $staffNuevo->save();
 

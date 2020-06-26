@@ -22,18 +22,19 @@ class CreateStaffTable extends Migration
             $table->string('nombre');
             $table->timestamps();
         });
-
+        
         Schema::create('ramas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
             $table->timestamps();
         });
-
+        
         Schema::create('staff', function (Blueprint $table) {
             $table->id();
             $table->boolean('estado');
             $table->string('nombre');
             $table->integer('edad');
+            $table->string('avatar');
             $table->unsignedBigInteger('curso_id');
             $table->foreign('curso_id')->references('id')->on('cursos');
             $table->unsignedBigInteger('rama_id');

@@ -23,7 +23,7 @@
     <div class="col-lg-4 col-sm-6 col-12 mb-3">
       <div class="card" style="width: 18rem;">
         <a href="{{ route('noticias.detalle', $post) }}">
-          <img src={{ asset("asset/imagen/imagen0.jpeg")}} class="card-img-top" alt="...">
+          <img src={{ asset("asset/imagen/post/$post->portada")}} class="card-img-top" alt="...">
           <div class="card-body">
             <ul class="nav p-0">
               @foreach ($post->categoria as $tipo)

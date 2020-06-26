@@ -45,17 +45,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //retorna todo el contenido del formulario
-        // return $request->all();
-
-        //retorna los datos del autor
-        // return auth()->user();
-
-        // $request->validate([
-        //     'titulo' => 'required',
-        //     'bajada' => 'required',
-        //     'descripcion' => 'required'
-        // ]);
+        $request->validate([
+            'titulo' => 'required',
+            'bajada' => 'required',
+            'descripcion' => 'required'
+        ]);
 
         $postNuevo = new Post;
         $postNuevo->estado = true;
@@ -64,7 +58,12 @@ class PostController extends Controller
         $postNuevo->bajada = $request->bajada;
         $postNuevo->descripcion = $request->descripcion;
 
-        // return $request->categoria;
+        $image = $request->file('portada');
+
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('asset/imagen/post/'), $new_name);
+
+        $postNuevo->portada = $new_name;
 
         $postNuevo->save();
         

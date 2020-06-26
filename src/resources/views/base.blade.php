@@ -23,7 +23,7 @@
   <div id="app">
     <header>
       <div class="container">
-        <h2 class="display-4">Grupo Scout</h2>
+        <h2 class="display-4 py-3">Grupo Scout</h2>
       </div>
       <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">

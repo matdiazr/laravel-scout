@@ -7,29 +7,35 @@
       <iframe class="w-100" height="500" src="https://www.youtube.com/embed/DtRwgGGxYtU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
+</div>
 
-  <div class="my-5">
-    <h3 class="text-center display-4 my-5">Nuestros colores</h3>
-    <div class="row nosotros-colores">
-      <div class="offset-1 pt-3 col-lg-3 w-50 contenedor-color text-center">
-        <span class="color1 mb-4"></span>
-        <p>color negro</p>
-        <p>representa bla bla bla bla</p>
-      </div>
-      <div class="offset-1 pt-3 col-lg-3 contenedor-color text-center">
-        <span class="color2 mb-4"></span>
-        <p>color dorado</p>
-        <p>representa bla bla bla bla</p>
-      </div>
-      <div class="offset-1 pt-3 col-lg-3 contenedor-color text-center">
-        <span class="color3 mb-4"></span>
-        <p>color gris</p>
-        <p>representa bla bla bla bla</p>
-      </div>
+<div class="container my-5">
+  <h3 class="text-center display-4 my-5">Nuestros colores</h3>
+  <div class="row nosotros-colores justify-content-around">
+    <div class="pt-3 col-lg-3 w-50 contenedor-color text-center">
+      <span class="color1 mb-4"></span>
+      <p>color negro</p>
+      <p>representa bla bla bla bla</p>
+    </div>
+    <div class="pt-3 col-lg-3 contenedor-color text-center">
+      <span class="color2 mb-4"></span>
+      <p>color dorado</p>
+      <p>representa bla bla bla bla</p>
+    </div>
+    <div class="pt-3 col-lg-3 contenedor-color text-center">
+      <span class="color3 mb-4"></span>
+      <p>color gris</p>
+      <p>representa bla bla bla bla</p>
     </div>
   </div>
+</div>
 
-  <div class="row my-4 py-3 bg-white">
+<div class="container-fluid titulo-imagen-destacada">
+  <h2 class="my-5 text-center">Los inicios</h2>
+</div>
+
+<div class="container my-5">
+  <div class="row my-5 py-3 bg-white">
     <div class="col-lg-4">
       <img src={{ asset("asset/imagen/imagen4.jpeg")}} class="card-img-top" alt="...">
     </div>
@@ -45,6 +51,5 @@
       <img src={{ asset("asset/imagen/imagen4.jpeg")}} class="card-img-top" alt="...">
     </div>
   </div>
-
 </div>
 @endsection

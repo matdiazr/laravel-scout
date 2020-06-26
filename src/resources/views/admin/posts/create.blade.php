@@ -12,9 +12,13 @@
     @endif
 
     <div class="col-lg-12">
-      <form action="" method="POST">
+      <form action="" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="text" name="titulo" placeholder="titulo" class="form-control m-2" id="">
+        <div class="custom-file m-2">
+          <input type="file" class="custom-file-input" id="portada" name="portada">
+          <label class="custom-file-label" for="customFile" data-browse="Elegir">Seleccionar Imagen</label>
+        </div>
         <input type="text" name="bajada" placeholder="bajada" class="form-control m-2" id="">
         <div class="row">
 

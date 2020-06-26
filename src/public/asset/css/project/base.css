@@ -35,7 +35,7 @@ footer a, footer p {
 }
 /* home blade */
 #carouselHome {
-  width: 800px;
+  width: 100%;
 }
 .titulo-imagen-destacada {
   background-color: #2F2C32;

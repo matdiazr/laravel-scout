@@ -52,6 +52,7 @@ class PostTableSeeder extends Seeder
         $post = new Post();
         $post->estado = true;
         $post->titulo = "noticia numero 1";
+        $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
         $post->autor_id = 1;
         $post->descripcion = "una descripción muy explicita a mi parecer";
@@ -62,6 +63,7 @@ class PostTableSeeder extends Seeder
         $post = new Post();
         $post->estado = true;
         $post->titulo = "noticia numero 2";
+        $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
         $post->autor_id = 1;
         $post->descripcion = "una descripción muy explicita a mi parecer";
@@ -72,6 +74,7 @@ class PostTableSeeder extends Seeder
         $post = new Post();
         $post->estado = true;
         $post->titulo = "noticia numero 3";
+        $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
         $post->autor_id = 1;
         $post->descripcion = "una descripción muy explicita a mi parecer";
@@ -82,12 +85,68 @@ class PostTableSeeder extends Seeder
         $post = new Post();
         $post->estado = true;
         $post->titulo = "noticia numero 4";
+        $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
         $post->autor_id = 1;
         $post->descripcion = "una descripción muy explicita a mi parecer";
         $post->save();
 
         $post->categoria()->attach([1,3,4]);
+
+        $post = new Post();
+        $post->estado = true;
+        $post->titulo = "noticia numero 5";
+        $post->portada = "default.jpg";
+        $post->bajada = "la bajada de la noticia no varia";
+        $post->autor_id = 1;
+        $post->descripcion = "una descripción muy explicita a mi parecer";
+        $post->save();
+
+        $post->categoria()->attach([4]);
+
+        $post = new Post();
+        $post->estado = true;
+        $post->titulo = "noticia numero 6";
+        $post->portada = "default.jpg";
+        $post->bajada = "la bajada de la noticia no varia";
+        $post->autor_id = 1;
+        $post->descripcion = "una descripción muy explicita a mi parecer";
+        $post->save();
+
+        $post->categoria()->attach([2,5]);
+
+        $post = new Post();
+        $post->estado = true;
+        $post->titulo = "noticia numero 7";
+        $post->portada = "default.jpg";
+        $post->bajada = "la bajada de la noticia no varia";
+        $post->autor_id = 1;
+        $post->descripcion = "una descripción muy explicita a mi parecer";
+        $post->save();
+
+        $post->categoria()->attach([3]);
+
+        $post = new Post();
+        $post->estado = true;
+        $post->titulo = "noticia numero 8";
+        $post->portada = "default.jpg";
+        $post->bajada = "la bajada de la noticia no varia";
+        $post->autor_id = 1;
+        $post->descripcion = "una descripción muy explicita a mi parecer";
+        $post->save();
+
+        $post->categoria()->attach([2]);
+
+        $post = new Post();
+        $post->estado = true;
+        $post->titulo = "noticia numero 9";
+        $post->portada = "default.jpg";
+        $post->bajada = "la bajada de la noticia no varia";
+        $post->autor_id = 1;
+        $post->descripcion = "una descripción muy explicita a mi parecer";
+        $post->save();
+
+        $post->categoria()->attach([4,5]);
         
         $curso = new Curso();
         $curso->nombre = "ninguno";

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Curso;
+use App\Rama;
 use App\Staff;
 use Illuminate\Http\Request;
 
@@ -29,7 +31,9 @@ class StaffController extends Controller
      */
     public function create(){
         $all_staff = Staff::latest()->paginate(5);
-        return view('admin.staff.create', compact('all_staff'));
+        $all_ramas = Rama::all();
+        $all_cursos = Curso::all();
+        return view('admin.staff.create', compact('all_staff', 'all_ramas', 'all_cursos'));
     }
 
     /**
@@ -47,7 +51,7 @@ class StaffController extends Controller
             'nombre' => 'required',
             'edad' => 'required',
             'descripcion' => 'required',
-            // 'avatar' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'avatar' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $staffNuevo = new Staff;
@@ -58,12 +62,16 @@ class StaffController extends Controller
         $staffNuevo->rama_id = 1;
         $staffNuevo->descripcion = $request->descripcion;
 
-        $image = $request->file('avatar');
+        if($request->file('avatar')){
+            $imagen = $request->file('avatar');
+            $nuevoNombre = rand() . '.' . $imagen->getClientOriginalExtension();
+            $imagen->move(public_path('asset/imagen/staff/'), $nuevoNombre);
 
-        $new_name = rand() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('asset/imagen/staff/'), $new_name);
+        }else {
+            $nuevoNombre = "avatar.png";
+        }
 
-        $staffNuevo->avatar = $new_name;
+        $staffNuevo->avatar = $nuevoNombre;
 
         $staffNuevo->save();
 

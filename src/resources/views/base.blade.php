@@ -11,7 +11,7 @@
   {{-- <script src= {{ asset("asset/js/jquery-3.5.1.slim.min.js")}} ></script> --}}
   {{-- cargar vue --}}
   <script src= {{ asset("js/app.js")}} defer></script>
-  <script src= {{ asset("asset/js/bootstrap.min.js")}} ></script>
+  {{-- <script src= {{ asset("asset/js/bootstrap.min.js")}} ></script> --}}
 
 
 
@@ -150,6 +150,6 @@
   </div>
 </body>
 
-<script src={{ asset("asset/js/bootstrap.bundle.min.js")}}></script>
-<script src={{ asset("asset/js/popper.min.js")}}></script>
+{{-- <script src={{ asset("asset/js/bootstrap.bundle.min.js")}}></script> --}}
+{{-- <script src={{ asset("asset/js/popper.min.js")}}></script> --}}
 </html>

@@ -48,7 +48,8 @@ class PostController extends Controller
         $request->validate([
             'titulo' => 'required',
             'bajada' => 'required',
-            'descripcion' => 'required'
+            'descripcion' => 'required',
+            'categoria' => 'required'
         ]);
 
         $postNuevo = new Post;
@@ -58,12 +59,16 @@ class PostController extends Controller
         $postNuevo->bajada = $request->bajada;
         $postNuevo->descripcion = $request->descripcion;
 
-        $image = $request->file('portada');
+        if($request->file('portada')){
+            $imagen = $request->file('portada');
+            $nuevoNombre = rand() . '.' . $imagen->getClientOriginalExtension();
+            $imagen->move(public_path('asset/imagen/post/'), $nuevoNombre);
 
-        $new_name = rand() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('asset/imagen/post/'), $new_name);
+        }else {
+            $nuevoNombre = "default.jpg";
+        }
 
-        $postNuevo->portada = $new_name;
+        $postNuevo->portada = $nuevoNombre;
 
         $postNuevo->save();
         

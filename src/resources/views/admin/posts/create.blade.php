@@ -23,8 +23,8 @@
         <div class="row">
 
           <div class="col-lg-11">
-            <select name="categoria" class="custom-select custom-select-md m-2">
-              <option value="" disabled selected>Categoria</option>
+            <select id="categoria" name="categoria[]" class="custom-select custom-select-md m-2" multiple>
+              <option value="" disabled selected>Categorias</option>
               @foreach ($all_categoria as $categoria)
               <option value="{{ $categoria->id }}">{{ $categoria->nombre}}</option>
               @endforeach

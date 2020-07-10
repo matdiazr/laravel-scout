@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Scout</title>
-  <link rel="stylesheet" href={{ asset("asset/css/bootstrap.min.css")}} >
-  <link rel="stylesheet" href={{ asset("asset/css/project/base.css")}} >
+  <link rel="stylesheet" href={{ asset("css/app.css") }} >
+  <link rel="stylesheet" href={{ asset("css/base.css") }} >
   {{-- cargar jquery antes que bootstrap cuando instalas vueJs --}}
   {{-- <script src= {{ asset("asset/js/jquery-3.5.1.slim.min.js")}} ></script> --}}
   {{-- cargar vue --}}
-  <script src= {{ asset("js/app.js")}} defer></script>
   {{-- <script src= {{ asset("asset/js/bootstrap.min.js")}} ></script> --}}
 
 
@@ -111,45 +110,13 @@
       @yield('content')
     {{-- </div> --}}
     <footer>
-      <div class="container-fluid">
-        <div class="row py-3">
-          <div class="offset-1 col-lg-4">
-            <h3>Redes Sociales</h3>
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link" href="#">instagram</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">facebook</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">twitter</a>
-              </li>
-            </ul>
-            <h3>Develop in 2020</h3>
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.instagram.com/matias.diazr/" target="_blank">Developer Matias</a></li>
-              <li class="nav-item">
-                <a class="nav-link" href="">Designer ...</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-7">
-            <h3>encuentranos</h3>
-            <div class="mapouter">
-              <div class="gmap_canvas">
-                <iframe width="600" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q=puente%20alto&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-              </div>
-              {{-- <style>.mapouter{position:relative;text-align:right;height:250px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:600px;}</style> --}}
-            </div>
-          </div>
-        </div>
-      </div>
+      <base-footer/>
     </footer>
     {{-- cargar vue --}}
   </div>
 </body>
-
+<script src= {{ asset("js/app.js")}} defer></script>
+<script src= {{ asset("js/base.js")}} ></script>
 {{-- <script src={{ asset("asset/js/bootstrap.bundle.min.js")}}></script> --}}
 {{-- <script src={{ asset("asset/js/popper.min.js")}}></script> --}}
 </html>

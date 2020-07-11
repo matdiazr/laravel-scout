@@ -1,9 +1,14 @@
+@php
+$instagram = new \InstagramScraper\Instagram();
+$medias = $instagram->getMedias('fotos_pietro', 3);
+@endphp
+
 @extends('base')
 
 @section('content')
 <div class="container">
   <div class="my-5 row">
-    
+
     <div class="col-lg-6">
       <div id="carouselHome" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -13,17 +18,13 @@
         </ol>
           
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src={{ asset("asset/imagen/imagen1.jpeg")}} class="d-block img-fluid" alt="...">
+          @foreach ($medias as $item)
+          <div class="carousel-item @if($loop->first) active @endif">
+            <img src="<?php echo $item->getImageHighResolutionUrl() ?>" class="d-block img-fluid" alt="...">
           </div>
-          <div class="carousel-item">
-            <img src={{ asset("asset/imagen/imagen2.jpeg")}} class="d-block img-fluid" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src={{ asset("asset/imagen/imagen3.jpeg")}} class="d-block img-fluid" alt="...">
-          </div>
+          @endforeach
         </div>
-        
+
         <a class="carousel-control-prev" href="#carouselHome" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>

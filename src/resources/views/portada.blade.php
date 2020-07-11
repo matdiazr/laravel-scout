@@ -7,7 +7,7 @@ $medias = $instagram->getMedias('fotos_pietro', 3);
 
 @section('content')
 <div class="container">
-  <div class="my-5 row">
+  <div class="my-4 row">
 
     <div class="col-lg-6">
       <div id="carouselHome" class="carousel slide" data-ride="carousel">
@@ -20,7 +20,7 @@ $medias = $instagram->getMedias('fotos_pietro', 3);
         <div class="carousel-inner">
           @foreach ($medias as $item)
           <div class="carousel-item @if($loop->first) active @endif">
-            <img src="<?php echo $item->getImageHighResolutionUrl() ?>" class="d-block img-fluid" alt="...">
+            <img src="<?php echo $item->getImageHighResolutionUrl() ?>" height="400" class="d-block mx-auto" alt="...">
           </div>
           @endforeach
         </div>
@@ -34,7 +34,7 @@ $medias = $instagram->getMedias('fotos_pietro', 3);
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <h2 class="pt-3 text-center">ultima actividad</h2>
+      <h2 class="pt-3 text-center">ultimas actividades</h2>
     </div>
 
     <div class="col-lg-6">
@@ -63,6 +63,13 @@ $medias = $instagram->getMedias('fotos_pietro', 3);
           <a href="{{ route('noticias.detalle', $post) }}">
             <img src={{ asset("asset/imagen/post/$post->portada")}} class="card-img-top" alt="...">
             <div class="card-body">
+              <ul class="nav p-0">
+                @foreach ($post->categoria as $tipo)
+                <li class="nav-item">
+                  <p class="card-categoria"> {{ $tipo->nombre }}@if($loop->last)@else / @endif</p>
+                </li>
+                @endforeach
+              </ul>
               <p class="card-text">{{ date('d-m-Y', strtotime($post->created_at ))}}</p>
               <h5 class="card-title">{{ $post->titulo }}</h5>
           {{-- <p class="card-text">{{ $post->bajada }}</p> --}}

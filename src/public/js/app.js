@@ -37692,9 +37692,14 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("ul", { staticClass: "nav flex-column" }, [
             _c("li", { staticClass: "nav-item" }, [
-              _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                _vm._v("instagram")
-              ])
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: { href: "https://www.instagram.com/fotos_pietro/" }
+                },
+                [_vm._v("instagram")]
+              )
             ]),
             _vm._v(" "),
             _c("li", { staticClass: "nav-item" }, [
@@ -50132,8 +50137,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/mateto/Documentos/docker-laravel/src/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/mateto/Documentos/docker-laravel/src/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/mateto/Documentos/laravel-scout/src/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/mateto/Documentos/laravel-scout/src/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

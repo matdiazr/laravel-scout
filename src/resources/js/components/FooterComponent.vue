@@ -5,7 +5,7 @@
         <h3>Redes Sociales</h3>
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" href="#">instagram</a>
+            <a class="nav-link" href="https://www.instagram.com/fotos_pietro/">instagram</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">facebook</a>

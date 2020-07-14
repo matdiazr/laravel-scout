@@ -45,7 +45,44 @@ switch(true) {
   case marcadorMary > marcadorMike && marcadorMary > marcadorJhon :
     console.log('Ganó el equipo de mary con :' + marcadorMary + " puntos.");
     break;
-
-  default :
+    
+    default :
     console.log('los equipos empataron');
 }
+  
+// challenge 3
+
+
+function calcularTip(dinero){
+  var descuento;
+  
+  switch(true)
+  {
+    case dinero < 50:
+      descuento = 0.2; 
+      break;
+
+    case dinero >= 50 && dinero < 200:
+      descuento = 0.15;
+      break;
+      
+      default:
+        descuento = 0.1;
+  }
+
+  return descuento * dinero;
+}
+      
+var gastos = [124, 48, 268];
+var totalTip = [
+  calcularTip(gastos[0]),
+  calcularTip(gastos[1]),
+  calcularTip(gastos[2])
+];
+var totalToPay = [ 
+  gastos[0] + totalTip[0],
+  gastos[1] + totalTip[1],
+  gastos[2] + totalTip[2]
+];
+
+console.log(totalTip , totalToPay);

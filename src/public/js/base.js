@@ -86,3 +86,40 @@ var totalToPay = [
 ];
 
 console.log(totalTip , totalToPay);
+
+// challenge 4
+
+var matias = {
+  nombreCompleto: 'matias diaz',
+  peso: 70,
+  altura: 1.50,
+  calcularMasa: function(){
+    this.masa = this.peso / (this.altura * this.altura);
+    return this.masa;
+  }
+}
+
+var cony = {
+  nombreCompleto: 'constanza inzunza',
+  peso: 70,
+  altura: 1.50,
+  calcularMasa: function(){
+    this.masa = this.peso / (this.altura * this.altura);
+    return this.masa;
+  }
+}
+
+function calcularGanador(jugador1, jugador2){
+  switch(true){
+    case jugador1.calcularMasa() > jugador2.calcularMasa():
+      console.log('Ganador ' + jugador1.nombreCompleto + ' con una masa de :' + jugador1.masa);
+      break;
+    case jugador2.masa > jugador1.masa:
+      console.log('Ganador ' + jugador2.nombreCompleto + ' con una masa de :' + jugador2.masa);
+      break;
+    default:
+      console.log('Empate entre ' + jugador1.nombreCompleto + ' y ' + jugador2.nombreCompleto + ' con masas de ' + jugador1.masa + ' y ' + jugador2.masa);      
+  }
+}
+
+calcularGanador(matias, cony);

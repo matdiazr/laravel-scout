@@ -123,3 +123,76 @@ function calcularGanador(jugador1, jugador2){
 }
 
 calcularGanador(matias, cony);
+
+// challenge 4 part 1
+
+var cuentasJohn = {
+  dinero: [124, 48, 268, 260, 42],
+  calcularPropina :  function(){
+    this.propinas = [];
+    this.totalPagar = [];
+
+    for(var i = 0; i < this.dinero.length; i++){
+      var porcentaje = 0;
+
+      switch(true){
+        case this.dinero[i] < 50:
+          porcentaje = 0.2;
+          break;
+        case this.dinero[i] >= 50 && this.dinero[i] < 200:
+          porcentaje = 0.15;
+          break;
+        default:
+          porcentaje = 0.1;
+          break;
+        }
+
+      this.propinas.push(this.dinero[i] * porcentaje);
+      this.totalPagar.push(this.propinas[i] + this.dinero[i]);
+    }
+  }
+};
+
+cuentasJohn.calcularPropina();
+
+// challenge 4 part 2
+
+var cuentasMark = {
+  dinero: [77, 375, 110, 45],
+  calcularPropina :  function(){
+    this.propinas = [];
+    this.totalPagar = [];
+
+    for(var i = 0; i < this.dinero.length; i++){
+      var porcentaje = 0;
+
+      switch(true){
+        case this.dinero[i] < 100:
+          porcentaje = 0.2;;
+          break;
+        case this.dinero[i] >= 100 && this.dinero[i] < 300:
+          porcentaje = 0.1;;
+          break;
+        default:
+          porcentaje = 0.25;
+          break;
+        }
+
+      this.propinas.push(this.dinero[i] * porcentaje);
+      this.totalPagar.push(this.propinas[i] + this.dinero[i]);
+    }
+  }
+};
+cuentasMark.calcularPropina();
+
+function calcularPromedioPropinas(propinas){
+  var promedioPropina = 0;
+  for(var i = 0; i < propinas.length; i++){
+    promedioPropina += propinas[i];
+  }
+  return promedioPropina / propinas.length;
+}
+
+console.log(calcularPromedioPropinas(cuentasJohn.propinas));
+console.log(calcularPromedioPropinas(cuentasMark.propinas));
+

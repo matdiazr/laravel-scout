@@ -112,7 +112,7 @@
   </div>
 </body>
 <script src= {{ asset("js/app.js")}} defer></script>
-<script src= {{ asset("js/base.js")}} ></script>
+{{-- <script src= {{ asset("js/base.js")}} ></script> --}}
 {{-- <script src={{ asset("asset/js/bootstrap.bundle.min.js")}}></script> --}}
 {{-- <script src={{ asset("asset/js/popper.min.js")}}></script> --}}
 </html>

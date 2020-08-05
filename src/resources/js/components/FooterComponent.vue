@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <div class="row py-3">
-      <div class="offset-1 col-lg-4">
+      <div class="offset-1 col-lg-4 linea-izquierda">
         <h3>Redes Sociales</h3>
         <ul class="nav flex-column">
           <li class="nav-item">
@@ -22,7 +22,7 @@
             <a class="nav-link" href="">Designer ...</a></li>
         </ul>
       </div>
-      <div class="col-lg-7">
+      <div class="col-lg-7 linea-izquierda">
         <h3>encuentranos</h3>
         <div class="mapouter">
           <div class="gmap_canvas">

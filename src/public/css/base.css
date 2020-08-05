@@ -89,3 +89,7 @@ footer a, footer p {
 .color3 {
   background-color: #E5E1E0;
 }
+/* footer */
+footer .linea-izquierda {
+  border-left:1px solid #D9BA06;
+}

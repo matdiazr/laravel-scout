@@ -37687,7 +37687,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container-fluid" }, [
       _c("div", { staticClass: "row py-3" }, [
-        _c("div", { staticClass: "offset-1 col-lg-4" }, [
+        _c("div", { staticClass: "offset-1 col-lg-4 linea-izquierda" }, [
           _c("h3", [_vm._v("Redes Sociales")]),
           _vm._v(" "),
           _c("ul", { staticClass: "nav flex-column" }, [
@@ -37740,7 +37740,7 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-7" }, [
+        _c("div", { staticClass: "col-lg-7 linea-izquierda" }, [
           _c("h3", [_vm._v("encuentranos")]),
           _vm._v(" "),
           _c("div", { staticClass: "mapouter" }, [

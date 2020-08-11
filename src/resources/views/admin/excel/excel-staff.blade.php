@@ -5,7 +5,7 @@
       <th>NOMBRE</th>
       <th>EDAD</th>
       <th>CURSO</th>
-      @if ($estado)
+      @if (!$estado)
       <th>ESTADO</th>
       @endif
   </tr>
@@ -17,7 +17,7 @@
           <td>{{ $persona->nombre }}</td>
           <td>{{ $persona->edad }}</td>
           <td>{{ $persona->curso->nombre }}</td>
-          @if ($estado)
+          @if (!$estado)
             <td>
               @if ($persona->estado)
                 activo  

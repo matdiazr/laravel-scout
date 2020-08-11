@@ -5,11 +5,9 @@ namespace App\Exports;
 use App\Staff;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\Exportable;
-// use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\FromView;
 
 class StaffExport implements FromView
-// class StaffExport implements FromQuery
 {
     use exportable;
 
@@ -21,26 +19,13 @@ class StaffExport implements FromView
     
     public function view(): View
     {
+        $configuracion['estado'] =  $this->estado;
+      
         if($this->estado){
-            return view('admin.excel.excel-staff', [
-                'staff' => Staff::where('estado', true)
-                ->get(),
-                'estado' => $this->estado
-            ]);
+            $configuracion['staff'] = Staff::where('estado', true)->get();
         }else{
-            return view('admin.excel.excel-staff', [
-                'staff' => Staff::orderBy('estado', 'desc')->get(),
-                'estado' => $this->estado
-            ]);
+            $configuracion['staff'] = Staff::orderBy('estado', 'desc')->get();
         }
+        return view('admin.excel.excel-staff', $configuracion);
     }
-
-    // public function query()
-    // {
-    //     if($this->estado){
-    //         return Staff::query()->where('estado', true);
-    //     }else{
-    //         return Staff::query();
-    //     }
-    // }
 }

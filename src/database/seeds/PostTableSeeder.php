@@ -251,6 +251,26 @@ class PostTableSeeder extends Seeder
         $staff->rama_id = 2;
         $staff->descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non porttitor ante. Fusce blandit sed velit at dapibus. Duis porta convallis odio vel feugiat. Integer gravida ex est,";
         $staff->save();
+
+        $staff = new Staff();
+        $staff->estado = false;
+        $staff->nombre = "tania";
+        $staff->avatar = "avatar.png";
+        $staff->edad = 40;
+        $staff->curso_id = 2;
+        $staff->rama_id = 2;
+        $staff->descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non porttitor ante. Fusce blandit sed velit at dapibus. Duis porta convallis odio vel feugiat. Integer gravida ex est,";
+        $staff->save();
+
+        $staff = new Staff();
+        $staff->estado = false;
+        $staff->nombre = "rigoberto";
+        $staff->avatar = "avatar.png";
+        $staff->edad = 40;
+        $staff->curso_id = 2;
+        $staff->rama_id = 2;
+        $staff->descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non porttitor ante. Fusce blandit sed velit at dapibus. Duis porta convallis odio vel feugiat. Integer gravida ex est,";
+        $staff->save();
     
     }
 }

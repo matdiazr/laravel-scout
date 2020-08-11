@@ -30,7 +30,7 @@ class StaffController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(){
-        $all_staff = Staff::latest()->paginate(5);
+        $all_staff = Staff::where('estado', true)->orderBy('id', 'desc')->paginate(5);
         $all_ramas = Rama::all();
         $all_cursos = Curso::all();
         return view('admin.staff.create', compact('all_staff', 'all_ramas', 'all_cursos'));
@@ -99,7 +99,9 @@ class StaffController extends Controller
     public function edit($id)
     {
         $staff = Staff::findOrFail($id);
-        return view('admin.staff.edit', compact('staff'));
+        $all_ramas = Rama::all();
+        $all_cursos = Curso::all();
+        return view('admin.staff.edit', compact('staff', 'all_ramas', 'all_cursos'));
     }
 
     /**
@@ -114,11 +116,11 @@ class StaffController extends Controller
         $staffUpdate = Staff::findOrFail($id);
         $staffUpdate->nombre = $request->nombre;
         $staffUpdate->edad = $request->edad;
-        $staffUpdate->curso = $request->curso;
-        $staffUpdate->rama = $request->rama;
         $staffUpdate->descripcion = $request->descripcion;
-
-        $staffUpdate->save();
+        $staffUpdate->curso_id = $request->curso;
+        $staffUpdate->rama_id = $request->rama;
+        
+        $staffUpdate->push();
         
         return back()->with('respuesta', 'Staff Modificado' );
     }

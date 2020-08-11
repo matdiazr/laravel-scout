@@ -49,8 +49,8 @@
   </form>
 </div>
 
-<div class="container mb-3">
-  <table class="table">
+<div class="container my-5">
+  <table class="table bg-white">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -66,18 +66,22 @@
         <td>{{ $staff->nombre }}</td>
         <td><a href="{{ route('staff.edit', $staff) }}" class="btn btn-warning btn-sm">Editar</a></td>
         <td>
-        <form action="{{ route('staff.delete', $staff) }}" method="POST">
-          @method('DELETE')
-          @csrf
-          <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+          <form action="{{ route('staff.delete', $staff) }}" method="POST">
+            @method('DELETE')
+            @csrf
+            <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
         </form>
-        </td>
-      </tr>
-      @endforeach
-    </tbody>
-  </table>
-  <div class="row justify-content-center">
-    {{ $all_staff->links()}}
-  </div>
+      </td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+<div class="row justify-content-end">
+<a href="{{ route('staff.exportar') }}" class="btn m-3 btn-success">Exportar Staffs</a>
+<a href="{{ route('staff.exportar') }}" class="btn m-3 btn-success">Exportar Historico</a>
+</div>
+<div class="row justify-content-center">
+  {{ $all_staff->links()}}
+</div>
 </div>
 @endsection

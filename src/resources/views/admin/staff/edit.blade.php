@@ -20,23 +20,15 @@
         <input class="col-lg-12 mb-2 form-control" type="text" name="edad" value="{{ $staff->edad}}">
         <label class="col-lg-12" for="curso">Curso :</label>
         <select name="curso" class="custom-select custom-select mb-2" id="">
-          <option value="{{ $staff->curso }}">{{ $staff->curso }}</option>
-          <option value="ninguno">Ninguno</option>
-          <option value="basico">Básico</option>
-          <option value="medio">Medio</option>
-          <option value="avanzado">Avanzado</option>
-          <option value="formador">Formador</option>
+          @foreach ($all_cursos as $curso)
+            <option @if ($curso->id == $staff->curso->id) selected @endif value="{{ $curso->id }}">{{ $curso->nombre }}</option>
+          @endforeach
         </select>
         <label class="col-lg-12" for="rama">Rama :</label>
         <select name="rama" class="custom-select custom-select mb-2" id="">
-          <option value="{{ $staff->rama }}">{{ $staff->rama }}</option>
-          <option value="indefinido">Indefinido</option>
-          <option value="lobatos">Lobatos</option>
-          <option value="golondrinas">Golondrinas</option>
-          <option value="tropa">Tropa</option>
-          <option value="compañia">Compañia</option>
-          <option value="pioneros">Pioneros</option>
-          <option value="caminantes">Caminantes</option>
+          @foreach ($all_ramas as $rama)
+            <option @if ($rama->id == $staff->rama->id) selected @endif value="{{ $rama->id }}">{{ $rama->nombre }}</option>
+          @endforeach
         </select>
       </div>
       <div class="col-lg-6">

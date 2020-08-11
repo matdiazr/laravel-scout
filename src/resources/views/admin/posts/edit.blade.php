@@ -20,12 +20,9 @@
         <input class="col-lg-12 mb-2 form-control" type="text" name="bajada" value="{{ $post->bajada}}">
         <label class="col-lg-12" for="tipo">Tipo :</label>
         <select name="tipo" class="custom-select custom-select mb-2" id="">
-          <option value="{{ $post->tipo }}">{{ $post->tipo }}</option>
-          <option value="scout">Scout</option>
-          <option value="campamento">Campamento</option>
-          <option value="deporte">Deporte</option>
-          <option value="salud">Salud</option>
-          <option value="criminal">Criminal</option>
+          @foreach ($all_categoria as $categoria)
+            <option @if ($categoria->id == $post->categoria[0]->id) selected @endif value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+          @endforeach
         </select>
       </div>
       <div class="col-lg-6">

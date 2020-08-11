@@ -39,8 +39,8 @@ Route::post('admin/staff', 'StaffController@store')->name('staff.create');
 Route::get('admin/staff/editar/{id}', 'StaffController@edit')->name('staff.edit');
 Route::put('admin/staff/editar/{id}', 'StaffController@update')->name('staff.update');
 Route::delete('admin/staff/eliminar/{id}','StaffController@destroy')->name('staff.delete');
+Route::get('admin/staff/export/', 'ExcelController@export')->name('staff.exportar');
 
-Route::get('staff/export/', 'ExcelController@export');
 
 
 //retornando una ruta con un string + una variable opcional y definimos un valor por defecto

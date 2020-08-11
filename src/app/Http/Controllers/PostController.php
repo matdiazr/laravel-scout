@@ -33,7 +33,7 @@ class PostController extends Controller
     public function create()
     {
         $all_posts = Post::latest()->paginate(5);
-        $all_categoria = App\Categoria::all();
+        $all_categoria = Categoria::all();
         return view('admin.posts.create', compact('all_posts', 'all_categoria'));
     }
 
@@ -99,7 +99,8 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::findOrFail($id);
-        return view('admin.posts.edit', compact('post'));
+        $all_categoria = Categoria::all();
+        return view('admin.posts.edit', compact('post', 'all_categoria'));
     }
 
     /**

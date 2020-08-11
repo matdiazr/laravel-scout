@@ -9,8 +9,17 @@ use App\Exports\StaffExport;
 class ExcelController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function export() 
     {
-        return Excel::download(new StaffExport, 'users.xlsx');
+        return Excel::download(new StaffExport, 'staff.xlsx');
     }
+    // public function allExport() 
+    // {
+    //     return Excel::download(new StaffExport, 'staff.xlsx');
+    // }
 }

@@ -77,8 +77,8 @@
   </tbody>
 </table>
 <div class="row justify-content-end">
-<a href="{{ route('staff.exportar') }}" class="btn m-3 btn-success">Exportar Staffs</a>
-<a href="{{ route('staff.exportar') }}" class="btn m-3 btn-success">Exportar Historico</a>
+<a href="{{ route('staff.exportar', true) }}" class="btn m-3 btn-success">Exportar Staffs</a>
+<a href="{{ route('staff.exportar', false) }}" class="btn m-3 btn-success">Exportar Historico</a>
 </div>
 <div class="row justify-content-center">
   {{ $all_staff->links()}}

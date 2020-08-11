@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Exports\StaffExport;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,7 +39,10 @@ Route::post('admin/staff', 'StaffController@store')->name('staff.create');
 Route::get('admin/staff/editar/{id}', 'StaffController@edit')->name('staff.edit');
 Route::put('admin/staff/editar/{id}', 'StaffController@update')->name('staff.update');
 Route::delete('admin/staff/eliminar/{id}','StaffController@destroy')->name('staff.delete');
-Route::get('admin/staff/export/', 'ExcelController@export')->name('staff.exportar');
+
+Route::get('admin/staff/export/{estado?}', function($estado = 0){
+    return (new StaffExport)->getEstado($estado)->download('staff.xlsx');
+})->name('staff.exportar');
 
 
 

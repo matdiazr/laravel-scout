@@ -77,7 +77,7 @@ class PagesController extends Controller
     }
 
     public function staffs(){
-        $all_staff = App\Staff::all();
+        $all_staff = App\Staff::where('estado', true)->orderBy('id', 'desc')->get();
         return view('staff', compact('all_staff'));
     }
 

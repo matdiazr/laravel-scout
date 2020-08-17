@@ -20,8 +20,7 @@ class StaffController extends Controller
      */
     public function index()
     {
-        $all_staff = Staff::all();
-        return view('staff', compact('all_staff'));
+       
     }
 
     /**
@@ -30,7 +29,7 @@ class StaffController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(){
-        $all_staff = Staff::where('estado', true)->orderBy('id', 'desc')->paginate(5);
+        $all_staff = Staff::orderBy('id', 'desc')->paginate(5);
         $all_ramas = Rama::all();
         $all_cursos = Curso::all();
         return view('admin.staff.create', compact('all_staff', 'all_ramas', 'all_cursos'));
@@ -137,5 +136,16 @@ class StaffController extends Controller
         $staffEliminar->delete();
 
         return back()->with('respuesta', 'Staff Eliminado');
+    }
+
+    public function toggle($id){
+        $staffUpdate = Staff::findOrFail($id);
+        $estadoNuevo = $staffUpdate->estado ? False : True;
+        $staffUpdate->estado = $estadoNuevo;
+        $staffUpdate->save();
+
+        $mensaje = $staffUpdate->estado ? "Staff Activado" : 'Staff Desactivado';
+
+        return back()->with('respuesta', $mensaje);
     }
 }

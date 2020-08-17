@@ -57,6 +57,7 @@
         <th scope="col">NOMBRE</th>
         <th scope="col">MODIFICAR</th>
         <th scope="col">BORRAR</th>
+        <th scope="col">ESTADO</th>
       </tr>
     </thead>
     <tbody>
@@ -72,6 +73,18 @@
             <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
         </form>
       </td>
+      <td>
+       <form action="{{ route('staff.toggle', $staff->id)}}" method="POST">
+        @method('PUT')
+        @csrf
+
+        @if($staff->estado)
+          <button type="submit" class="btn btn-success btn-sm">ACTIVO</button>
+        @else
+          <button type="submit" class="btn btn-danger btn-sm">INACTIVO</button>  
+        @endif
+      </td>
+      </form>
     </tr>
     @endforeach
   </tbody>

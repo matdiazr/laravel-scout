@@ -31,6 +31,7 @@ Route::post('admin/noticias', 'PostController@store')->name('noticias.create');
 Route::get('admin/noticias/editar/{id}', 'PostController@edit')->name('post.edit');
 Route::put('admin/noticias/editar/{id}', 'PostController@update')->name('post.update');
 Route::delete('admin/noticias/eliminar/{id}','PostController@destroy')->name('post.delete');
+Route::put('admin/post/{id?}', 'PostController@toggle')->name('post.toggle');
 
 //staff
 Route::get('staff', 'PagesController@staffs')->name('staff');

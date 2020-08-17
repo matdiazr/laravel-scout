@@ -20,9 +20,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $all_posts = Post::latest()->paginate(6);
-        // return $all_posts;
-        return view('posts.posts', compact('all_posts'));
+        // $all_posts = Post::latest()->paginate(6);
+        // // return $all_posts;
+        // return view('posts.posts', compact('all_posts'));
     }
 
     /**
@@ -139,5 +139,16 @@ class PostController extends Controller
         $postEliminar->delete();
 
         return back()->with('respuesta', 'Post Eliminado');
+    }
+
+    public function toggle($id){
+        $postUpdate = Post::findOrFail($id);
+        $estadoNuevo = $postUpdate->estado ? False : True;
+        $postUpdate->estado = $estadoNuevo;
+        $postUpdate->save();
+
+        $mensaje = $postUpdate->estado ? "Post Publicado" : 'Post Bajado';
+
+        return back()->with('respuesta', $mensaje);
     }
 }

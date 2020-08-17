@@ -13,7 +13,7 @@ class PagesController extends Controller
     }
 
     public function noticias(){
-        $all_posts = App\Post::latest()->paginate(6);
+        $all_posts = App\Post::where('estado', true)->orderBy('id', 'desc')->paginate(6);
         $all_category = App\Categoria::all();
         $respuesta = null;
 

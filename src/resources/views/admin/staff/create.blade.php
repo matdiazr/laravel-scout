@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="container">
-  <h2 class="m-4">Formulario: Staff</h2>
+  <h2 class="my-4 mx-2">Formulario: Staff</h2>
 
   @if (session('respuesta'))
-    <div class="alert alert-success m-2">
-      <p class="pl-2">{{ session('respuesta') }}</p>
-    </div>  
+  <div class="alert alert-success m-2">
+    <p class="pl-2">{{ session('respuesta') }}</p>
+  </div>  
   @endif
 
   <form action="" method="POST" enctype="multipart/form-data">
@@ -50,7 +50,7 @@
 </div>
 
 <div class="container my-5">
-  <table class="table bg-white">
+  <table class="table bg-white m-2">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -89,12 +89,12 @@
     @endforeach
   </tbody>
 </table>
-<div class="row justify-content-end">
-<a href="{{ route('staff.exportar', true) }}" class="btn m-3 btn-success">Exportar Staffs</a>
-<a href="{{ route('staff.exportar', false) }}" class="btn m-3 btn-success">Exportar Historico</a>
-</div>
-<div class="row justify-content-center">
-  {{ $all_staff->links()}}
-</div>
+  <div class="row justify-content-end">
+    <a href="{{ route('staff.exportar', true) }}" class="btn m-3 btn-success">Exportar Staffs</a>
+    <a href="{{ route('staff.exportar', false) }}" class="btn m-3 btn-success">Exportar Historico</a>
+  </div>
+  <div class="row justify-content-center">
+    {{ $all_staff->links()}}
+  </div>
 </div>
 @endsection

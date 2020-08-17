@@ -72,7 +72,7 @@ class PostTableSeeder extends Seeder
         $post->categoria()->attach([1]);
 
         $post = new Post();
-        $post->estado = true;
+        $post->estado = false;
         $post->titulo = "noticia numero 3";
         $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
@@ -94,7 +94,7 @@ class PostTableSeeder extends Seeder
         $post->categoria()->attach([1,3,4]);
 
         $post = new Post();
-        $post->estado = true;
+        $post->estado = false;
         $post->titulo = "noticia numero 5";
         $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
@@ -116,7 +116,7 @@ class PostTableSeeder extends Seeder
         $post->categoria()->attach([2,5]);
 
         $post = new Post();
-        $post->estado = true;
+        $post->estado = false;
         $post->titulo = "noticia numero 7";
         $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
@@ -147,6 +147,28 @@ class PostTableSeeder extends Seeder
         $post->save();
 
         $post->categoria()->attach([4,5]);
+
+        $post = new Post();
+        $post->estado = true;
+        $post->titulo = "noticia numero 10";
+        $post->portada = "default.jpg";
+        $post->bajada = "la bajada de la noticia no varia";
+        $post->autor_id = 1;
+        $post->descripcion = "una descripción muy explicita a mi parecer";
+        $post->save();
+
+        $post->categoria()->attach([3]);
+
+        $post = new Post();
+        $post->estado = true;
+        $post->titulo = "noticia numero 11";
+        $post->portada = "default.jpg";
+        $post->bajada = "la bajada de la noticia no varia";
+        $post->autor_id = 1;
+        $post->descripcion = "una descripción muy explicita a mi parecer";
+        $post->save();
+
+        $post->categoria()->attach([4]);
         
         $curso = new Curso();
         $curso->nombre = "ninguno";
@@ -203,7 +225,7 @@ class PostTableSeeder extends Seeder
         $staff->save();
 
         $staff = new Staff();
-        $staff->estado = true;
+        $staff->estado = false;
         $staff->nombre = "emerson";
         $staff->avatar = "avatar.png";
         $staff->edad = 20;
@@ -233,7 +255,7 @@ class PostTableSeeder extends Seeder
         $staff->save();
 
         $staff = new Staff();
-        $staff->estado = true;
+        $staff->estado = false;
         $staff->nombre = "alfredo";
         $staff->avatar = "avatar.png";
         $staff->edad = 38;
@@ -263,12 +285,22 @@ class PostTableSeeder extends Seeder
         $staff->save();
 
         $staff = new Staff();
-        $staff->estado = false;
+        $staff->estado = true;
         $staff->nombre = "rigoberto";
         $staff->avatar = "avatar.png";
-        $staff->edad = 40;
-        $staff->curso_id = 2;
-        $staff->rama_id = 2;
+        $staff->edad = 20;
+        $staff->curso_id = 1;
+        $staff->rama_id = 4;
+        $staff->descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non porttitor ante. Fusce blandit sed velit at dapibus. Duis porta convallis odio vel feugiat. Integer gravida ex est,";
+        $staff->save();
+
+        $staff = new Staff();
+        $staff->estado = true;
+        $staff->nombre = "alexander";
+        $staff->avatar = "avatar.png";
+        $staff->edad = 32;
+        $staff->curso_id = 4;
+        $staff->rama_id = 1;
         $staff->descripcion = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non porttitor ante. Fusce blandit sed velit at dapibus. Duis porta convallis odio vel feugiat. Integer gravida ex est,";
         $staff->save();
     

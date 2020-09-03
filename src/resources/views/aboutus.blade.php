@@ -12,7 +12,7 @@
 <div class="container my-5">
   <h3 class="text-center display-4 my-5">Nuestros colores</h3>
   <div class="row nosotros-colores justify-content-around">
-    <div class="pt-3 col-lg-3 w-50 contenedor-color text-center">
+    <div class="pt-3 col-lg-3 contenedor-color text-center">
       <span class="color1 mb-4"></span>
       <p>color negro</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a libero a libero gravida eleifend sed id orci. Maecenas vitae egestas tortor, nec porta ligula. Fusce gravida ac turpis sit amet interdum. Aliquam erat volutpat. Praesent vitae lorem in tellus aliquam ultricies. Aliquam erat volutpat.</p>

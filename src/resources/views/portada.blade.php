@@ -33,7 +33,11 @@ $medias = $instagram->getMedias('scout_es', 6);
           <span class="sr-only">Next</span>
         </a>
       </div>
+      <div class="col-lg-12 p-0">
+        <h2 class="flecha-text rounded-bottom">ultimas actividades</h2>
+      </div>
     </div>
+
     
     <div class="col-lg-6">
       <div class="jumbotron bg-white">
@@ -43,9 +47,7 @@ $medias = $instagram->getMedias('scout_es', 6);
       </div>
     </div>
     
-    <div class="col-lg-6 justify-content-end">
-      <h2 class="flecha-text">ultimas actividades</h2>
-    </div>
+    
 
   </div>
 </div>
@@ -61,9 +63,9 @@ $medias = $instagram->getMedias('scout_es', 6);
     <div class="row m-5">
     @foreach ($last_posts as $post)
       <div class="col-lg-4 col-sm-6 col-12 my-2">
-        <div class="card" style="width: 18rem;">
+        <div class="card">
           <a href="{{ route('noticias.detalle', $post) }}">
-            <img src={{ asset("asset/imagen/post/$post->portada")}} class="card-img-top" alt="...">
+            <img src='{{ asset("asset/imagen/post/$post->portada")}}' class="card-img-top" alt="...">
             <div class="card-body">
               <ul class="nav p-0">
                 @foreach ($post->categoria as $tipo)
@@ -74,8 +76,6 @@ $medias = $instagram->getMedias('scout_es', 6);
               </ul>
               <p class="card-text">{{ date('d-m-Y', strtotime($post->created_at ))}}</p>
               <h5 class="card-title">{{ $post->titulo }}</h5>
-          {{-- <p class="card-text">{{ $post->bajada }}</p> --}}
-          {{-- <a href="{{ route('noticias.detalle', $post) }}" class="btn btn-primary">ver más</a> --}}
             </div>
           </a>
         </div>

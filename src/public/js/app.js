@@ -37789,15 +37789,15 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-7 linea-izquierda" }, [
+        _c("div", { staticClass: "offset-1 col-lg-6 linea-izquierda" }, [
           _c("h3", [_vm._v("encuentranos")]),
           _vm._v(" "),
           _c("div", { staticClass: "mapouter" }, [
-            _c("div", { staticClass: "gmap_canvas" }, [
+            _c("div", { staticClass: "gmap_canvas p-0 col-lg-12" }, [
               _c("iframe", {
+                staticClass: "w-100",
                 attrs: {
-                  width: "600",
-                  height: "250",
+                  height: "230",
                   id: "gmap_canvas",
                   src:
                     "https://maps.google.com/maps?q=puente%20alto&t=&z=15&ie=UTF8&iwloc=&output=embed",

@@ -57,7 +57,6 @@ footer a, footer p {
   font-weight: bold;
   font-size: 32px;
   background-color: #2F2C32;
-  border-radius: 5px;
   text-align: center;
   padding: 10px;
 }
@@ -72,6 +71,18 @@ footer a, footer p {
 .nav-categoria {
   font-weight: bold;
   text-transform: uppercase;
+}
+.nav-categoria .nav-item{
+  background-color: #2F2C32;
+  border-radius: 10px;
+  margin: 0 10px;
+  
+}
+.nav-categoria .nav-item a {
+  color: white;
+}
+.nav-categoria .nav-item a:hover, a:focus, a:active, a.active {
+  color: #D9BA06;
 }
 .card-categoria {
   color: #D9BA06;

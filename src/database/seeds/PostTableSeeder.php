@@ -21,8 +21,8 @@ class PostTableSeeder extends Seeder
 
         $user = new User();
         $user->name = "matias";
-        $user->email = "matitroll@gmail.com";
-        $user->password = bcrypt("finoyvulgar");
+        $user->email = "mat.diazr@gmail.com";
+        $user->password = bcrypt("matias");
         $user->save();
 
         // Categoria::truncate();
@@ -51,7 +51,7 @@ class PostTableSeeder extends Seeder
 
         $post = new Post();
         $post->estado = true;
-        $post->titulo = "noticia numero 1";
+        $post->titulo = "aniversario scout";
         $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
         $post->autor_id = 1;
@@ -62,7 +62,7 @@ class PostTableSeeder extends Seeder
 
         $post = new Post();
         $post->estado = true;
-        $post->titulo = "noticia numero 2";
+        $post->titulo = "dia del pañolin";
         $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
         $post->autor_id = 1;
@@ -73,7 +73,7 @@ class PostTableSeeder extends Seeder
 
         $post = new Post();
         $post->estado = false;
-        $post->titulo = "noticia numero 3";
+        $post->titulo = "campamento de verano";
         $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
         $post->autor_id = 1;
@@ -84,7 +84,7 @@ class PostTableSeeder extends Seeder
 
         $post = new Post();
         $post->estado = true;
-        $post->titulo = "noticia numero 4";
+        $post->titulo = "muere joven scout apuñalado";
         $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
         $post->autor_id = 1;
@@ -95,7 +95,7 @@ class PostTableSeeder extends Seeder
 
         $post = new Post();
         $post->estado = false;
-        $post->titulo = "noticia numero 5";
+        $post->titulo = "cumpleaños de lord baden powell";
         $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
         $post->autor_id = 1;
@@ -106,7 +106,7 @@ class PostTableSeeder extends Seeder
 
         $post = new Post();
         $post->estado = true;
-        $post->titulo = "noticia numero 6";
+        $post->titulo = "campamento distrital";
         $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
         $post->autor_id = 1;
@@ -117,7 +117,7 @@ class PostTableSeeder extends Seeder
 
         $post = new Post();
         $post->estado = false;
-        $post->titulo = "noticia numero 7";
+        $post->titulo = "mejor patruya del distrito";
         $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
         $post->autor_id = 1;
@@ -128,7 +128,7 @@ class PostTableSeeder extends Seeder
 
         $post = new Post();
         $post->estado = true;
-        $post->titulo = "noticia numero 8";
+        $post->titulo = "olimpiadas distritles";
         $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
         $post->autor_id = 1;
@@ -139,7 +139,7 @@ class PostTableSeeder extends Seeder
 
         $post = new Post();
         $post->estado = true;
-        $post->titulo = "noticia numero 9";
+        $post->titulo = "curso de formacion";
         $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
         $post->autor_id = 1;
@@ -150,7 +150,7 @@ class PostTableSeeder extends Seeder
 
         $post = new Post();
         $post->estado = true;
-        $post->titulo = "noticia numero 10";
+        $post->titulo = "aprende estos nudos";
         $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
         $post->autor_id = 1;
@@ -161,7 +161,7 @@ class PostTableSeeder extends Seeder
 
         $post = new Post();
         $post->estado = true;
-        $post->titulo = "noticia numero 11";
+        $post->titulo = "fiesta scout";
         $post->portada = "default.jpg";
         $post->bajada = "la bajada de la noticia no varia";
         $post->autor_id = 1;

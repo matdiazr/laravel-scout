@@ -43,6 +43,24 @@ footer a, footer p {
 #carouselHome {
   width: 100%;
 }
+.carousel-item img {
+  width: 540px;
+  height: 400px;
+  object-fit: cover;
+}
+.carousel ol li {
+  background-color: #2F2C32;
+}
+.flecha-text {
+  color: #D9BA06;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 32px;
+  background-color: #2F2C32;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px;
+}
 .titulo-imagen-destacada {
   background-color: #2F2C32;
   height: 100px;

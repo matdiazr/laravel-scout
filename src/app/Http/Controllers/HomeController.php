@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $last_posts = App\Post::latest()->take(3)->get();
+        
         return view('portada', compact('last_posts'));
     }
 }

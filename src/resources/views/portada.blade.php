@@ -1,6 +1,6 @@
 @php
 $instagram = new \InstagramScraper\Instagram();
-$medias = $instagram->getMedias('fotos_pietro', 3);
+$medias = $instagram->getMedias('scout_es', 6);
 @endphp
 
 @extends('base')
@@ -8,23 +8,22 @@ $medias = $instagram->getMedias('fotos_pietro', 3);
 @section('content')
 <div class="container">
   <div class="my-4 row">
-
     <div class="col-lg-6">
       <div id="carouselHome" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          <li data-target="#carouselHome" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselHome" data-slide-to="1"></li>
-          <li data-target="#carouselHome" data-slide-to="2"></li>
+          @foreach ($medias as $item)
+          <li data-target="#carouselHome" data-slide-to="{{ $loop->index }}" class="@if($loop->first) active @endif"></li>
+          @endforeach
         </ol>
-          
+        
         <div class="carousel-inner">
           @foreach ($medias as $item)
           <div class="carousel-item @if($loop->first) active @endif">
-            <img src="<?php echo $item->getImageHighResolutionUrl() ?>" height="400" class="d-block mx-auto" alt="...">
+            <img src="<?php echo $item->getImageHighResolutionUrl() ?>" class="d-block mx-auto" alt="...">
           </div>
           @endforeach
         </div>
-
+        
         <a class="carousel-control-prev" href="#carouselHome" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -34,15 +33,18 @@ $medias = $instagram->getMedias('fotos_pietro', 3);
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <h2 class="pt-3 text-center">ultimas actividades</h2>
     </div>
-
+    
     <div class="col-lg-6">
-      <div class="jumbotron bg-white pt-3">
+      <div class="jumbotron bg-white">
         <h2>horario de actividades</h2>
         <p class="lead">Todo los sabados de 15:00 PM hasta las 18:00 PM</p>
         <a class="btn btn-primary btn-lg" href="{{ route('nosotros') }}" role="button">Más sobre nosotros</a>
       </div>
+    </div>
+    
+    <div class="col-lg-6 justify-content-end">
+      <h2 class="flecha-text">ultimas actividades</h2>
     </div>
 
   </div>

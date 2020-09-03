@@ -8,7 +8,7 @@ use App;
 class PagesController extends Controller
 {
     public function portada(){
-        $last_posts = App\Post::latest()->take(3)->get();
+        $last_posts = App\Post::orderBy('id', 'desc')->take(3)->get();
         return view('portada', compact('last_posts'));
     }
 

@@ -81,7 +81,7 @@ footer a, footer p {
 .nav-categoria .nav-item a {
   color: white;
 }
-.nav-categoria .nav-item a:hover, a:focus, a:active, a.active {
+.nav-categoria .nav-item a:hover, .nav-categoria .nav-item a:focus, .nav-categoria .nav-item  .nav-categoria .nav-item a:active, .nav-categoria .nav-item a.active {
   color: #D9BA06;
 }
 .card-categoria {

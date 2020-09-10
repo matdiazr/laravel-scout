@@ -196,3 +196,60 @@ function calcularPromedioPropinas(propinas){
 console.log(calcularPromedioPropinas(cuentasJohn.propinas));
 console.log(calcularPromedioPropinas(cuentasMark.propinas));
 
+
+//lest do it!
+function interviewQuestion(job){
+  return function (name){
+    switch (job){
+      case 'diseñador':
+        texto = 'hola ' + name + ' diseñador';
+        break;
+      case 'profesor':
+        texto = 'hola ' + name + ' profesor';
+        break;
+      default:
+        texto = 'que haces ' + name;
+    }
+    console.log(texto)
+  }
+}
+
+interviewQuestion('diseñador')('matias');
+
+// challenge 7
+(function(){
+  function Question(pregunta, alternativas, respuesta_correcta){
+    this.pregunta = pregunta;
+    this.alternativas = alternativas;
+    this.respuesta_correcta = respuesta_correcta;
+  }
+
+  Question.prototype.evaluarRespuesta = function(respuesta){
+    if(pregunta.respuesta_correcta == respuesta){
+      console.log('Respuesta Correcta');
+    }else{
+      console.log('Respuesta Incorrecta');
+    }
+  }
+
+  Question.prototype.imprimirPregunta = function(preguntaSeleccionada){
+    console.log(preguntaSeleccionada.pregunta)
+    for(i = 0; i < preguntaSeleccionada.alternativas.length; i++){
+      console.log(i + ') ' + preguntaSeleccionada.alternativas[i]);
+    }
+  }
+  
+  var pregunta1 = Question('1+1 = ?', ['1', '2', '3'], 1);
+  var pregunta2 = Question('2+4 = ?', ['0', '6', '2'], 1);
+  var pregunta3 = Question('6+3 = ?', ['1', '2', '9'], 2);
+  
+  var preguntaAleatoria = this.preguntas[Math.floor(Math.random() * preguntas.length)];
+  
+  var preguntas = [pregunta1, pregunta2, pregunta3];
+
+  var pregunta = question.seleccionarPregunta();
+  question.imprimirPregunta(pregunta);
+  var respuesta = parseInt(prompt('responde con una alternativa'));
+  question.evaluarRespuesta(respuesta, pregunta);
+}
+)();

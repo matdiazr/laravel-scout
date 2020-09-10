@@ -6,8 +6,8 @@
     <div class="col-lg-12 justify-content-center my-3 menu-tipo">
       <ul class="nav justify-content-center nav-categoria">
         @foreach ($all_category as $category)
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('filtrar.tipo', $category->nombre) }}">{{ $category->nombre }}</a>
+        <li class="nav-item filtro-categoria">
+          <a class="nav-link @if($tipoNoticia == $category->nombre) active @endif" href="{{ route('filtrar.tipo', $category->nombre) }}">{{ $category->nombre }}</a>
         </li>
         @endforeach
       </ul>

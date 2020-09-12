@@ -73,8 +73,7 @@ class PagesController extends Controller
             $respuesta = "No se encontraron Noticias";
         }
 
-        $tipoNoticia = $nombre;
-        return view('posts.posts', compact('all_posts', 'respuesta', 'all_category', 'tipoNoticia'));
+        return view('posts.posts', compact('all_posts', 'respuesta', 'all_category'));
     }
 
     public function staffs(){

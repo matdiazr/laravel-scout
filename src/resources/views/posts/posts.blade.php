@@ -7,12 +7,11 @@
       <ul class="nav justify-content-center nav-categoria">
         @foreach ($all_category as $category)
         <li class="nav-item filtro-categoria">
-          <a class="nav-link @if($tipoNoticia == $category->nombre) active @endif" href="{{ route('filtrar.tipo', $category->nombre) }}">{{ $category->nombre }}</a>
+          <a class="nav-link @if(last(request()->segments()) == $category->nombre) active @endif" href="{{ route('filtrar.tipo', $category->nombre) }}">{{ $category->nombre }}</a>
         </li>
         @endforeach
       </ul>
     </div>  
-
     <div class="w-100 border mb-5"></div>
 
     @if ($respuesta)

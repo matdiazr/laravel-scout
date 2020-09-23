@@ -228,6 +228,7 @@ interviewQuestion('diseñador')('matias');
     var puntajeTotal;
 
     if(this.respuesta_correcta == respuesta){
+      // se llama la funcion, se le pasa el parametro y almacenamos el puntaje retornado
       puntajeTotal = llamadoRespuesta(true);
     }else{
       puntajeTotal = llamadoRespuesta(false);
@@ -247,7 +248,9 @@ interviewQuestion('diseñador')('matias');
     console.log('----------------------------------');
   }
   
+  //concepto de closure.
   function puntaje(){
+    // declaramos el puntaje como 0
     var puntaje = 0;
     return function(respuesta){
       if(respuesta){
@@ -257,6 +260,7 @@ interviewQuestion('diseñador')('matias');
     }    
   }
 
+  //almacenamos el closure en una variable, el puntaje existe en la variable
   var manterPuntaje = puntaje();
 
   var pregunta1 = new Question('1+1 = ?', ['1', '2', '3'], 1);
@@ -264,13 +268,14 @@ interviewQuestion('diseñador')('matias');
   var pregunta3 = new Question('6+3 = ?', ['1', '2', '9'], 2);
   var preguntas = [pregunta1, pregunta2, pregunta3];
   
-
+  // desafio... lanzar todas las pregunta una sola vez de manera aleatoria( usaria un sort y un pop)
   function jugar(){
     var preguntaAleatoria = preguntas[Math.floor(Math.random() * preguntas.length)];
     preguntaAleatoria.imprimirPregunta();
     var respuesta = prompt('responde con una alternativa');
     
     if(respuesta != 'salir'){
+      //el metodo recibe una respuesta y una funcion
       preguntaAleatoria.evaluarRespuesta(parseInt(respuesta), manterPuntaje);
       jugar();
     }

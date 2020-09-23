@@ -224,32 +224,121 @@ interviewQuestion('diseñador')('matias');
     this.respuesta_correcta = respuesta_correcta;
   }
 
-  Question.prototype.evaluarRespuesta = function(respuesta){
-    if(pregunta.respuesta_correcta == respuesta){
-      console.log('Respuesta Correcta');
+  Question.prototype.evaluarRespuesta = function(respuesta, llamadoRespuesta){
+    var puntajeTotal;
+
+    if(this.respuesta_correcta == respuesta){
+      puntajeTotal = llamadoRespuesta(true);
     }else{
-      console.log('Respuesta Incorrecta');
+      puntajeTotal = llamadoRespuesta(false);
+    }
+    this.imprimirPuntaje(puntajeTotal);
+  }
+
+  Question.prototype.imprimirPregunta = function(){
+    console.log(this.pregunta)
+    for(i = 0; i < this.alternativas.length; i++){
+      console.log(i + ') ' + this.alternativas[i]);
     }
   }
 
-  Question.prototype.imprimirPregunta = function(preguntaSeleccionada){
-    console.log(preguntaSeleccionada.pregunta)
-    for(i = 0; i < preguntaSeleccionada.alternativas.length; i++){
-      console.log(i + ') ' + preguntaSeleccionada.alternativas[i]);
-    }
+  Question.prototype.imprimirPuntaje = function(puntaje){
+    console.log('tu puntaje es de:' + puntaje);
+    console.log('----------------------------------');
   }
   
-  var pregunta1 = Question('1+1 = ?', ['1', '2', '3'], 1);
-  var pregunta2 = Question('2+4 = ?', ['0', '6', '2'], 1);
-  var pregunta3 = Question('6+3 = ?', ['1', '2', '9'], 2);
-  
-  var preguntaAleatoria = this.preguntas[Math.floor(Math.random() * preguntas.length)];
-  
+  function puntaje(){
+    var puntaje = 0;
+    return function(respuesta){
+      if(respuesta){
+        puntaje++;
+      }
+      return puntaje;
+    }    
+  }
+
+  var manterPuntaje = puntaje();
+
+  var pregunta1 = new Question('1+1 = ?', ['1', '2', '3'], 1);
+  var pregunta2 = new Question('2+4 = ?', ['0', '6', '2'], 1);
+  var pregunta3 = new Question('6+3 = ?', ['1', '2', '9'], 2);
   var preguntas = [pregunta1, pregunta2, pregunta3];
+  
 
-  var pregunta = question.seleccionarPregunta();
-  question.imprimirPregunta(pregunta);
-  var respuesta = parseInt(prompt('responde con una alternativa'));
-  question.evaluarRespuesta(respuesta, pregunta);
+  function jugar(){
+    var preguntaAleatoria = preguntas[Math.floor(Math.random() * preguntas.length)];
+    preguntaAleatoria.imprimirPregunta();
+    var respuesta = prompt('responde con una alternativa');
+    
+    if(respuesta != 'salir'){
+      preguntaAleatoria.evaluarRespuesta(parseInt(respuesta), manterPuntaje);
+      jugar();
+    }
+  }
+
+  jugar();
+
+  // console.log(preguntaAleatoria);
+  // var pregunta = question.seleccionarPregunta();
 }
 )();
+
+//prueba
+// var morseDictionary = {  
+//   "a":".-",
+//   "b":"-...",
+//   "c":"-.-.",
+//   "d":"-..",
+//   "e":".",
+//   "f":"..-.",
+//   "g":"--.",
+//   "h":"....",
+//   "i":"..",
+//   "j":".---",
+//   "k":"-.-",
+//   "l":".-..",
+//   "m":"--",
+//   "n":"-.",
+//   "o":"---",
+//   "p":".--.",
+//   "q":"--.-",
+//   "r":".-.",
+//   "s":"...",
+//   "t":"-",
+//   "u":"..-",
+//   "v":"...-",
+//   "w":".--",
+//   "x":"-..-",
+//   "y":"-.--",
+//   "z":"--.."
+// };
+
+// function letterToMorse(letter){
+//   return morseDictionary[letter];
+// }
+
+// function wordToMorse(words){
+//   transformedWord = "";
+ 
+//   for(i=0; i < words.length; i++){
+//     transformedWord += letterToMorse(words.substr(i,1));
+//   }
+//   return transformedWord;
+// }
+
+// function ejecutar(){
+//     const L = readline();
+//     const N = parseInt(readline());
+//     var result = 0;
+//     for (let i = 0; i < N; i++) {
+//         var W = readline();
+//         if(wordToMorse(W.toLowerCase()) == L){
+//             result+= 1;
+//         }
+//     }
+//     return result;
+// }
+
+// console.log(ejecutar());
+// console.log(letterToMorse('u'));
+// console.log(wordToMorse('adios'));
